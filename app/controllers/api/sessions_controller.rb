@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
 
         if @user
             login!(@user)
-            # render 'api/users/show'
+            render 'api/users/show' # this is needed to properly extract the info needed upon logging a user, otherwise there will be no data received from the BE to receive a current user when the receiveCurrentUser action is dispatched
         else 
             render json: ['Invalid credentials'], status: 401
         end
@@ -19,7 +19,7 @@ class Api::SessionsController < ApplicationController
         if current_user
             logout!
             # render "api/users/show"
-            render json: {}
+            # render json: {}
         else
             render json: ["You are not logged in"], status: 404
         end

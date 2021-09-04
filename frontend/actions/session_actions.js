@@ -16,17 +16,17 @@ const logoutCurrentUser = () => ({
 
 const receiveErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
-    errors
+    errors // this is an array
 })
 
-// thunk action creators
+// thunk action creators (don't forget to dispatch any errors)
 export const login = user => (
     dispatch => (
         SessionAPIUtil.login(user)
             .then(user => (
                 dispatch(receiveCurrentUser(user))
             ), error => (
-                dispatch(receiveErrors(error.responseJSON))
+                dispatch(receiveErrors(error.responseJSON)) // key in promise response
             ))
     )
 )
@@ -45,6 +45,6 @@ export const signup = user => (
 export const logout = () => (
     dispatch => (
         SessionAPIUtil.logout()
-            .then(() => dispatch(logoutCurrentUser()))
+            .then(user => dispatch(logoutCurrentUser()))
     )
 )
