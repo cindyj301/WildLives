@@ -1,8 +1,8 @@
 import React from 'react';
 
-import SignupModal from '../modal/signup_form_modal';
+import SignupFormContainer from './signup_form_container';
 
-class SessionForm extends React.Component {
+class LoginForm extends React.Component {
     constructor(props) {
         super(props);
 
@@ -16,7 +16,7 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.state);
+        this.props.login();
     }
 
     handleChange(field) {
@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
 
     handleDemoUser(e) {
         e.preventDefault();
-        const demoUser = { email: "iluvsloths@gmail.com", password: "eatingleaves123" }
+        const demoUser = { email: "iluvsloths@gmail.com", password: "eatingleaves123", show: false }
         this.setState(demoUser);
         this.props.login(demoUser);
     }
@@ -63,10 +63,10 @@ class SessionForm extends React.Component {
                     <button>Log In</button>
                 </form>
                 <button onClick={(e) => this.handleDemoUser(e)}>Log In as Demo User</button>
-                <SignupModal />
+                <SignupFormContainer />
             </div>
         )
     }
 }
 
-export default SessionForm;
+export default LoginForm;
