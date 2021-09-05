@@ -2,8 +2,8 @@ class User < ApplicationRecord
     validates :email, :session_token, presence: true, uniqueness: true
     validates :password_digest, presence: true
     validates :password, length: { minimum: 6, allow_nil: true }
-    validates :status, inclusion: { in: %w(critically_endangered endangered vulnerable),
-        message: "%{} is not valid conservation status" }
+    validates :status, inclusion: { in: ["Critically Endangered", "Endangered", "Vulnerable"],
+        message: "%{value} is not a valid conservation status" }
 
     attr_reader :password
 

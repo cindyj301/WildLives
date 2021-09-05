@@ -14,5 +14,5 @@ user = User.create!(
     email: "iluvsloths@gmail.com",
     password: "eatingleaves123",
     animal: "Pygmy three-toed sloth",
-    status: "critically_endangered"
+    status: "Critically Endangered"
 )
