@@ -18,10 +18,24 @@ class SignupModal extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.signup(this.state);
+        this.props.hideModal();
     }
 
     handleChange(field) {
         return e => this.setState({ [field]: e.currentTarget.value });
+    }
+
+    renderErrors() {
+        const { errors } = this.props;
+        return (
+            <ul>
+                {errors.map((error, idx) => (
+                    <li key={`error-${idx}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
     }
 
     render() {
@@ -43,6 +57,7 @@ class SignupModal extends React.Component {
                             />
                         </div>
                         <form className="modal-form" onSubmit={this.handleSubmit}>
+                            {this.renderErrors()}
                             <input
                                 type="text"
                                 placeholder="First name"
@@ -76,12 +91,30 @@ class SignupModal extends React.Component {
                                 />
                             </label>
                             <label>Conservation Status
-                                <select>
-                                    <option value="">Please choose an option</option>
-                                    <option value={this.state.status} onChange={this.handleChange('status')}>Critically Endangered</option>
-                                    <option value={this.state.status} onChange={this.handleChange('status')}>Endangered</option>
-                                    <option value={this.state.status} onChange={this.handleChange('status')}>Vulnerable</option>
-                                </select>
+                                <label>Critically Endangered
+                                    <input
+                                        type="radio"
+                                        value="Critically Endangered"
+                                        checked={this.state.status === 'Critically Endangered'}
+                                        onChange={this.handleChange('status')}
+                                    />
+                                </label>
+                                <label>Endangered
+                                    <input
+                                        type="radio"
+                                        value="Endangered"
+                                        checked={this.state.status === 'Endangered'}
+                                        onChange={this.handleChange('status')}
+                                    />
+                                </label>
+                                <label>Vulnerable
+                                    <input
+                                        type="radio"
+                                        value="Vulnerable"
+                                        checked={this.state.status === 'Vulnerable'}
+                                        onChange={this.handleChange('status')}
+                                    />
+                                </label>
                             </label>
                             <button>Sign Up</button>
                         </form>
@@ -92,7 +125,7 @@ class SignupModal extends React.Component {
         return (
             <div>
                 {this.props.modal && <div>{signupForm()}</div>} {/* init state = false then after clicking button modal is true */}
-                {<button onClick={() => this.props.showModal()}>Create New Account</button>} {/* init state = false then modal is true but because of !this.props.modal it stays false and then after clicking close modal = false but because of ! it's true */}
+                <button onClick={() => this.props.showModal()}>Create New Account</button> {/* init state = false then modal is true but because of !this.props.modal it stays false and then after clicking close modal = false but because of ! it's true */}
             </div>
         )
     }

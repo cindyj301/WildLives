@@ -16,7 +16,7 @@ class LoginForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login();
+        this.props.login(this.state);
     }
 
     handleChange(field) {
@@ -39,7 +39,6 @@ class LoginForm extends React.Component {
     handleDemoUser(e) {
         e.preventDefault();
         const demoUser = { email: "iluvsloths@gmail.com", password: "eatingleaves123", show: false }
-        this.setState(demoUser);
         this.props.login(demoUser);
     }
 
