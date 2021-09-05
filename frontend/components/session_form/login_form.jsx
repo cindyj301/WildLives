@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SignupModal from '../modal/signup_form_modal';
+
 class SessionForm extends React.Component {
     constructor(props) {
         super(props);
@@ -14,7 +16,7 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state);
+        this.props.login(this.state);
     }
 
     handleChange(field) {
@@ -38,7 +40,7 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const demoUser = { email: "iluvsloths@gmail.com", password: "eatingleaves123" }
         this.setState(demoUser);
-        this.props.processForm(demoUser);
+        this.props.login(demoUser);
     }
 
     render() {
@@ -61,7 +63,7 @@ class SessionForm extends React.Component {
                     <button>Log In</button>
                 </form>
                 <button onClick={(e) => this.handleDemoUser(e)}>Log In as Demo User</button>
-                <button>Create New Account</button>
+                <SignupModal />
             </div>
         )
     }

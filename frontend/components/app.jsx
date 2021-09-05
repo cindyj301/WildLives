@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
 import NewsFeedContainer from './news_feed/news_feed_container';
 import LoginFormContainer from './session_form/login_form_container';
