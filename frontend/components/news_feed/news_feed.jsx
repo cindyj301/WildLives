@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginFormContainer from '../session_form/login_form_container';
 
 const NewsFeed = ({ currentUser, logout }) => {
     const loggedIn = () => (
@@ -10,7 +11,7 @@ const NewsFeed = ({ currentUser, logout }) => {
 
     const loggedOut = () => (
         <div>
-            <h2>Splash Page</h2>
+            <LoginFormContainer />
         </div>
     );
 
