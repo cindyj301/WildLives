@@ -32,7 +32,7 @@ const NavBar = ({ currentUser, logout }) => {
               </div>
               <ul>
                 <li>
-                  {/* <button onClick={logout}>Log Out</button> */}
+                  <button onClick={logout}>Log Out</button>
                 </li>
               </ul>
             </li>
