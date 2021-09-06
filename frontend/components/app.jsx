@@ -7,7 +7,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
     <div>
-        <h1>WildLives</h1>
         <Switch>
             <ProtectedRoute path='/feed' component={NewsFeedContainer} />
             <AuthRoute exact path='/' component={LoginFormContainer} />

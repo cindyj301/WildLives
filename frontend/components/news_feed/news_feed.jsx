@@ -1,11 +1,11 @@
 import React from 'react';
 import LoginFormContainer from '../session_form/login_form_container';
+import NavBarContainer from '../../components/navbar/navbar_container';
 
-const NewsFeed = ({ currentUser, logout }) => {
+const NewsFeed = ({ currentUser }) => {
     const loggedIn = () => (
         <div>
-            <span>{currentUser.fname + ' ' + currentUser.lname}</span>
-            <button onClick={logout}>Log Out</button>
+            <NavBarContainer />
         </div>
     );
 
