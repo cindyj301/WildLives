@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SignupFormContainer from './signup_form_container';
+import SignupFormContainer from '../signup/signup_form_container';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
 
     handleDemoUser(e) {
         e.preventDefault();
-        const demoUser = { email: "iluvsloths@gmail.com", password: "eatingleaves123", show: false }
+        const demoUser = { email: "iluvsloths@gmail.com", password: "eatingleaves123" }
         this.props.login(demoUser);
     }
 

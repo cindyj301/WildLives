@@ -2,10 +2,10 @@ import { connect } from "react-redux"
 
 import { signup } from '../../actions/session_actions';
 import { hideModal, showModal } from "../../actions/modal_actions";
-import SignupModal from "../modal/signup_form_modal";
+import SignupModal from "./signup_form_modal";
 
 const mSTP = ({ errors, ui }) => ({
-    errors: errors.session,
+    errors: errors.signup,
     modal: ui.modal
 })
 

@@ -49,3 +49,9 @@ ol, ul {
 	color: inherit;
 	cursor: pointer;
 } */
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #E9EBEE;
+}

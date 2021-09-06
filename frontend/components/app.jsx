@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 
 import NewsFeedContainer from './news_feed/news_feed_container';
-import LoginFormContainer from './session_form/login_form_container';
+import LoginFormContainer from './login/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (

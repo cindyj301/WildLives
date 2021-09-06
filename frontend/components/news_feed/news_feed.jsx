@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginFormContainer from '../session_form/login_form_container';
+import LoginFormContainer from '../login/login_form_container';
 import NavBarContainer from '../../components/navbar/navbar_container';
 
 const NewsFeed = ({ currentUser }) => {
