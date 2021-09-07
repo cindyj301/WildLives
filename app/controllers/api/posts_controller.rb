@@ -1,30 +1,37 @@
 class Api::PostsController < ApplicationController
     before_action :ensure_logged_in!
 
+    def show
+        @post = Post.find_by(id: params[:id])
+        render :show
+    end
+
+    def index
+        @posts = Post.all
+        render :index
+    end
+
     def update
         @post = Post.find_by(id: params[:id])
 
         if @post && @post.update(post_params)
-            render 'api/posts/show'
+            render :show
         else
            render json: @post.errors.full_messages, status: 422
         end 
     end
 
     def create
-        @post = Post.new(post_params)
-        # @post.post_author_id = params[:post_author_id]
-
+        @post = current_user.posts.new(post_params)
         if @post.save
-            render 'api/posts/show' # create posts show in jbuilder
+            render :show
         else
             render json: @post.errors.full_messages, status: 422
         end
     end
 
     def destroy
-        # @post = current_user.posts.find_by(id: params[:id])
-        @post = Post.find_by(id: params[:id])
+        @post = current_user.posts.find_by(id: params[:id])
 
         if @post && @post.destroy
             render json: {}

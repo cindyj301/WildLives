@@ -121,10 +121,11 @@ class SignupModal extends React.Component {
                 </div>
             )
         }
+        
         return (
             <div>
-                {this.props.modal && <div>{signupForm()}</div>} {/* init state = false then after clicking button modal is true */}
-                <button onClick={() => this.props.showModal()}>Create New Account</button> {/* init state = false then modal is true but because of !this.props.modal it stays false and then after clicking close modal = false but because of ! it's true */}
+                {this.props.modal && <div>{signupForm()}</div>}
+                <button onClick={() => this.props.showModal()}>Create New Account</button> 
             </div>
         )
     }

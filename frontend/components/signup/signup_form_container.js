@@ -9,7 +9,7 @@ const mSTP = ({ errors, ui }) => ({
     modal: ui.modal
 })
 
-const mDTP = (dispatch) => ({
+const mDTP = dispatch => ({
     hideModal: () => dispatch(hideModal()),
     showModal: () => dispatch(showModal()),
     signup: (user) => dispatch(signup(user))

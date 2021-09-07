@@ -1,0 +1,42 @@
+.post-form-button-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 80px;
+}
+
+.post-form-button {
+    background-color: white;
+    display: flex;
+    width: 500px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.post-form-button p {
+    background-color: #E9EBEE;
+    cursor: pointer;
+    padding: 12px 12px 8px 8px;
+    width: 400px;
+    height: 22px;
+    border-radius: 20px;
+    color: #65676B;
+}
+
+.post-form-button p:hover {
+    background-color: #dcdee0;
+}
+
+p:first-child {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40px;
+}
