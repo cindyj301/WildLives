@@ -1,16 +1,92 @@
 import React from 'react'
 
 import slothLogo from 'Images/sloth_logo.png'
-import accountLogo from 'Images/account_dropdown_icon.png';
 import homeLogo from 'Images/home_icon.png'
+import accountLogo from 'Images/account_dropdown_icon.png';
+import logoutLogo from 'Images/logout_icon.png';
 
-const NavBar = props => {
+const NavBar = ({ logout }) => {
+  const accountIcon = () => (
+    <img
+        src={accountLogo}
+        alt="account-dropdown-icon"
+      />
+  )
+
   return (
     <nav className="navbar">
+      <div className="navbar-icons">
+        <img className="sloth-logo" src={slothLogo} alt="sloth" />
+        <img src={homeLogo} alt="home-icon" className="home-icon" />
+      </div>
       <ul className="navbar-nav">
-        
+        <NavBarItem icon={accountIcon()}>
+          <DropdownMenu logout={logout} />
+        </NavBarItem>
       </ul>
     </nav>
+  )
+}
+
+class NavBarItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { open: false };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.setState({ open: !this.state.open });
+  }
+
+  render() {
+    const accountIcon = () => {
+      return (
+        <li className="navbar-item">
+          <a
+            href="#"
+            className="icon-button"
+            onClick={this.handleClick}>
+            {this.props.icon}
+          </a>
+        </li>
+      )
+    }
+
+    return (
+      <>
+        {accountIcon()}
+        { this.state.open && this.props.children } {/* if open = true then show props.children, else render nothing */ }
+      </>
+    )
+  }
+}
+
+const DropdownMenu = props => {
+  const logoutIcon = () => (
+    <img
+      src={logoutLogo}
+      alt="logout-icon"
+    />
+  )
+
+  return (
+      <div className="dropdown">
+        <DropdownItem logout={props.logout} leftIcon={logoutIcon()}>
+          <p className="logout-text">Log Out</p>
+        </DropdownItem>
+      </div>
+  )
+}
+
+const DropdownItem = props => {
+  return (
+    <div onClick={props.logout} href="#" className="menu-item">
+      <span className="icon-left">{props.leftIcon}</span>
+      {props.children}
+    </div>
   )
 }
 
