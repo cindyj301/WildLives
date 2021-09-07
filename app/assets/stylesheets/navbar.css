@@ -16,8 +16,8 @@
 .profile-icon-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100px;
+    justify-content: space-around;
+    width: 95px;
     padding: 0px 10px;
     margin-right: 0px;
     height: 40px;

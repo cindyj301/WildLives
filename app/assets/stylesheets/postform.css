@@ -18,9 +18,9 @@
 .post-form-button p {
     background-color: #E9EBEE;
     cursor: pointer;
-    padding: 12px 12px 8px 8px;
+    padding: 10px 12px 8px 10px;
     width: 400px;
-    height: 22px;
+    height: 35px;
     border-radius: 20px;
     color: #65676B;
 }
@@ -31,7 +31,7 @@
 
 p:first-child {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 .profile-container {

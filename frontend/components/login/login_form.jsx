@@ -43,26 +43,44 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        const splashText = () => (
+            <div className="splash-logo-container">
+                <h1 className="splash-logo">WildLives</h1>
+                <h2 className="splash-text">Connect with friends in the wild on WildLives.</h2>
+            </div>
+        )
+
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    {this.renderErrors()}
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        value={this.state.email}
-                        onChange={this.handleChange('email')}
-                    />
-                    <input
-                        type="password"
-                        placeholder="Password"
-                        value={this.state.password}
-                        onChange={this.handleChange('password')}
-                    />
-                    <button>Log In</button>
-                </form>
-                <button onClick={(e) => this.handleDemoUser(e)}>Log In as Demo User</button>
-                <SignupFormContainer />
+            <div className="splash-container">
+                {splashText()}
+                <div className="form-container">
+                    <form className="login-form" onSubmit={this.handleSubmit}>
+                        {this.renderErrors()}
+                        <input
+                            className="form-input"
+                            type="email"
+                            placeholder="Email"
+                            value={this.state.email}
+                            onChange={this.handleChange('email')}
+                        />
+                        <input
+                            className="form-input"
+                            type="password"
+                            placeholder="Password"
+                            value={this.state.password}
+                            onChange={this.handleChange('password')}
+                        />
+                        <button className="login-button">
+                            <p>Log In</p>
+                        </button>
+                    </form>
+                    <div className="form-button-container">
+                        <div className="demo-user-button">
+                            <p onClick={(e) => this.handleDemoUser(e)}>Log in as Demo Sloth</p>
+                        </div>
+                        <SignupFormContainer />
+                    </div>
+                </div>
             </div>
         )
     }
