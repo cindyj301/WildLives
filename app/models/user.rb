@@ -5,9 +5,13 @@ class User < ApplicationRecord
     validates :status, inclusion: { in: ["Critically Endangered", "Endangered", "Vulnerable"],
         message: "%{value} is not a valid conservation status" }
 
+    after_initialize :ensure_session_token
+
     attr_reader :password
 
-    after_initialize :ensure_session_token
+    has_many :posts,
+        foreign_key: :post_author_id,
+        class_name: "Post"
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
