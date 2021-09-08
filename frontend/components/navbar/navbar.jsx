@@ -1,10 +1,5 @@
 import React from 'react'
 
-// image imports
-// import slothLogo from 'Images/sloth_logo.png'
-// import homeLogo from 'Images/home_icon.png'
-// import accountLogo from 'Images/account_dropdown_icon.png';
-
 // component imports
 import NavBarItem from './navbar_item';
 import DropdownMenu from './dropdown_menu';

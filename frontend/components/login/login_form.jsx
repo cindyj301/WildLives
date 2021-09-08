@@ -87,11 +87,6 @@ class LoginForm extends React.Component {
                         <div className="demo-user-button">
                             <p onClick={(e) => this.handleDemoUser(e)}>Log in as Demo Sloth</p>
                         </div>
-                        {/* <div className="modal-background">
-                            <div className="modal-child">
-                                <SignupFormContainer />
-                            </div>
-                        </div> */}
                         <SignupFormContainer />
                     </div>
                 </div>
