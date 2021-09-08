@@ -33,6 +33,7 @@
 .modal-close {
     font-size: 24px;
     cursor: pointer;
+    display: inline-block;
     /* position: absolute;
     right: 10px; */
 }

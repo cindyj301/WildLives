@@ -143,7 +143,7 @@ class SignupModal extends React.Component {
 
         return (
             <div>
-                { !this.props.modal && signupForm() } {/* change back to this.props.modal after finished styling!!! */}
+                { this.props.modal && signupForm() } {/* change back to this.props.modal after finished styling!!! */}
                 <button className="signup-button" onClick={() => this.props.showModal()}>Create New Account</button>
             </div>
         )
