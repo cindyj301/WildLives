@@ -90,7 +90,7 @@ class SignupModal extends React.Component {
                                 onChange={this.handleChange('password')}
                             />
 
-                            <label for="animal" className="label-input">Animal</label>
+                            <label htmlFor="animal" className="label-input">Animal</label>
                                 <input
                                     className="signup-input"
                                     type="text"
@@ -100,7 +100,7 @@ class SignupModal extends React.Component {
                                     onChange={this.handleChange('animal')}
                                 />
                             
-                            <label for="status" className="label-input">Conservation Status</label>
+                            <label htmlFor="status" className="label-input">Conservation Status</label>
                             <div className="status-container">
                                 <div className="status-input-container">
                                     <label>Critically Endangered</label>
@@ -133,8 +133,11 @@ class SignupModal extends React.Component {
                                     />
                                 </div>
                             </div>
-                            
-                            <button className="signup-modal-button signup-button">Sign Up</button>
+                            <div className="signup-button-container">
+                                <button className="signup-modal-button signup-button">
+                                    <p>Sign Up</p>
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -143,7 +146,7 @@ class SignupModal extends React.Component {
 
         return (
             <div>
-                { this.props.modal && signupForm() } {/* change back to this.props.modal after finished styling!!! */}
+                {this.props.modal && signupForm() }
                 <button className="signup-button" onClick={() => this.props.showModal()}>Create New Account</button>
             </div>
         )

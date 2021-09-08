@@ -1,6 +1,8 @@
 .modal-header.signup-form {
     border-bottom: 0.5px solid rgb(207, 205, 205);
     padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: 15fr 1fr;
 }
 
 .signup-form {
@@ -25,7 +27,7 @@ p.signup-text {
 /* inputs */
 .name-input-container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 0.5rem;
 }
 
@@ -71,15 +73,23 @@ p.signup-text {
     outline: none;
 }
 
+
+.signup-button-container {
+    display: flex;
+    justify-content: center;
+}
+
 /* signup-button styling in splash.css */
 .signup-button.signup-modal-button {
-    background-color: #42B72A;
+    background-color: #359e20;
     color: white;
-    margin-top: 30px;
+    margin-top: 50px;
     padding: 10px;
     border-radius: 5px;
     font-weight: bold;
     width: 150px;
-    position: relative;
-    left: 25%;
+}
+
+.signup-button.signup-modal-button:hover {
+    background-color: rgba(63, 155, 45, 0.8);
 }
