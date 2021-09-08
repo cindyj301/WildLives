@@ -15,9 +15,13 @@ class SignupModal extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // componentWillUnmount() {
+    //     this.props.clearErrors();
+    // }
+
     handleSubmit(e) {
         e.preventDefault();
-        this.props.signup(this.state).then(this.props.hideModal);
+        this.props.signup(this.state).then(this.props.hideModal).then(this.props.clearErrors);
     }
 
     handleChange(field) {
@@ -29,7 +33,7 @@ class SignupModal extends React.Component {
         return (
             <ul>
                 {errors.map((error, idx) => (
-                    <li key={`error-${idx}`}>
+                    <li key={`error-${idx}`} className="signup-errors">
                         {error}
                     </li>
                 ))}

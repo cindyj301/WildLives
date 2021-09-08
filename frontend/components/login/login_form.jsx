@@ -14,9 +14,13 @@ class LoginForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // componentWillUnmount() {
+    //     this.props.clearErrors();
+    // }
+
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.state);
+        this.props.login(this.state).then(this.props.clearErrors);
     }
 
     handleChange(field) {
@@ -28,7 +32,7 @@ class LoginForm extends React.Component {
         return (
             <ul>
                 {errors.map((error, idx) => (
-                    <li key={`error-${idx}`}>
+                    <li key={`error-${idx}`} className="login-errors">
                         {error}
                     </li>
                 ))}
@@ -78,6 +82,11 @@ class LoginForm extends React.Component {
                         <div className="demo-user-button">
                             <p onClick={(e) => this.handleDemoUser(e)}>Log in as Demo Sloth</p>
                         </div>
+                        {/* <div className="modal-background">
+                            <div className="modal-child">
+                                <SignupFormContainer />
+                            </div>
+                        </div> */}
                         <SignupFormContainer />
                     </div>
                 </div>

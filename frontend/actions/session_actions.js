@@ -26,9 +26,9 @@ const receiveLoginErrors = errors => ({
     errors
 })
 
-// export const clearErrors = () => ({
-//     type: CLEAR_ERRORS
-// })
+export const clearErrors = () => ({
+    type: CLEAR_ERRORS
+})
 
 // thunk action creators (don't forget to dispatch any errors)
 export const login = user => (

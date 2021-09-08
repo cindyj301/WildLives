@@ -3,7 +3,7 @@ class User < ApplicationRecord
     validates :password_digest, presence: true
     validates :password, length: { minimum: 6, allow_nil: true }
     validates :status, inclusion: { in: ["Critically Endangered", "Endangered", "Vulnerable"],
-        message: "Conservation Status cannot be blank" }
+        message: "%{value} can't be blank" }
 
     after_initialize :ensure_session_token
 

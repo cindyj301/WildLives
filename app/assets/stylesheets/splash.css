@@ -119,3 +119,17 @@
 .signup-button:hover {
     background-color: #369c22;   
 }
+
+.login-errors {
+  font-size: 12px;  
+  margin-left: 10px;
+  color: red;
+  font-weight: bold;
+}
+
+.signup-errors {
+  font-size: 12px;  
+  margin-left: 5px;
+  color: red;
+  font-weight: bold;    
+}
