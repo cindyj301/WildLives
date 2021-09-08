@@ -1,9 +1,9 @@
 import React from 'react'
 
 // image imports
-import slothLogo from 'Images/sloth_logo.png'
-import homeLogo from 'Images/home_icon.png'
-import accountLogo from 'Images/account_dropdown_icon.png';
+// import slothLogo from 'Images/sloth_logo.png'
+// import homeLogo from 'Images/home_icon.png'
+// import accountLogo from 'Images/account_dropdown_icon.png';
 
 // component imports
 import NavBarItem from './navbar_item';
@@ -15,7 +15,7 @@ import { capitalize } from '../../util/format_util';
 const NavBar = ({ currentUser }) => {
   const accountIcon = () => (
     <img
-        src={accountLogo}
+        src={window.accountLogo}
         alt="account-dropdown-icon"
       />
   )
@@ -37,8 +37,8 @@ const NavBar = ({ currentUser }) => {
   return (
     <nav className="navbar">
       <div className="navbar-icons">
-        <img className="sloth-logo hover" src={slothLogo} alt="sloth" />
-        <img src={homeLogo} alt="home-icon" className="home-icon hover" />
+        <img className="sloth-logo hover" src={window.slothLogo} alt="sloth" />
+        <img src={window.homeLogo} alt="home-icon" className="home-icon hover" />
       </div>
       <ul className="navbar-nav">
         {profileIcon()}
