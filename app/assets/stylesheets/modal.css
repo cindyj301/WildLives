@@ -1,8 +1,8 @@
 .modal-container {
-    background-color: rgba(255, 255, 255, 0.7);
+    /* background-color: rgba(255, 255, 255, 0.7); */
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     display: flex;
@@ -13,24 +13,26 @@
 .modal {
     margin: auto;
     border-radius: 5px; 
-    width: 432px;
+    width: 450px;
     height: 495px;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .modal-header {
-    padding: 10px 16px;
+    padding: 10px 10px 10px 16px;
     display: flex;
     justify-content: space-between;
 }
 
 .modal-form {
     border-top: 1px;
-    padding: 16px;
+    padding:  10px 16px 16px 16px;
 }
 
 .modal-close {
     font-size: 24px;
     cursor: pointer;
+    /* position: absolute;
+    right: 10px; */
 }

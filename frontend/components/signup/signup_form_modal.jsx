@@ -42,10 +42,10 @@ class SignupModal extends React.Component {
             return (
                 <div className="modal-container">
                     <div className="modal">
-                        <div className="modal-header">
+                        <div className="modal-header signup-form">
                             <div className="modal-header-text">
-                                <div>Sign Up</div>
-                                <div>It's quick and easy.</div>
+                                <h3 className="signup-text">Sign Up</h3>
+                                <p className="signup-text">It's quick and easy.</p>
                             </div>
                             <img
                                 className="modal-close"
@@ -55,76 +55,95 @@ class SignupModal extends React.Component {
                                 onClick={() => this.props.hideModal()}
                             />
                         </div>
-                        <form className="modal-form" onSubmit={this.handleSubmit}>
+
+                        <form className="modal-form signup-form" onSubmit={this.handleSubmit}>
                             {this.renderErrors()}
+                            <div className="name-input-container">
+                                <input
+                                    className="signup-input"
+                                    type="text"
+                                    placeholder="First name"
+                                    value={this.state.fname}
+                                    onChange={this.handleChange('fname')}
+                                />
+                                <input
+                                    className="signup-input"
+                                    type="text"
+                                    placeholder="Last name"
+                                    value={this.state.lname}
+                                    onChange={this.handleChange('lname')}
+                                />
+                            </div>
+
                             <input
-                                type="text"
-                                placeholder="First name"
-                                value={this.state.fname}
-                                onChange={this.handleChange('fname')}
-                            />
-                            <input
-                                type="text"
-                                placeholder="Last name"
-                                value={this.state.lname}
-                                onChange={this.handleChange('lname')}
-                            />
-                            <input
+                                className="signup-input"
                                 type="email"
                                 placeholder="Email"
                                 value={this.state.email}
                                 onChange={this.handleChange('email')}
                             />
                             <input
+                                className="signup-input"
                                 type="password"
                                 placeholder="New password"
                                 value={this.state.password}
                                 onChange={this.handleChange('password')}
                             />
-                            <label>Animal
+
+                            <label for="animal" className="label-input">Animal</label>
                                 <input
+                                    className="signup-input"
                                     type="text"
+                                    name="animal"
                                     placeholder="Pygmy three-toed sloth"
                                     value={this.state.animal}
                                     onChange={this.handleChange('animal')}
                                 />
-                            </label>
-                            <label>Conservation Status
-                                <label>Critically Endangered
+                            
+                            <label for="status" className="label-input">Conservation Status</label>
+                            <div className="status-container">
+                                <div className="status-input-container">
+                                    <label>Critically Endangered</label>
                                     <input
                                         type="radio"
                                         value="Critically Endangered"
+                                        name="status"
                                         checked={this.state.status === 'Critically Endangered'}
                                         onChange={this.handleChange('status')}
                                     />
-                                </label>
-                                <label>Endangered
+                                </div>
+                                <div className="status-input-container">
+                                    <label>Endangered</label>
                                     <input
                                         type="radio"
                                         value="Endangered"
+                                        name="status"
                                         checked={this.state.status === 'Endangered'}
                                         onChange={this.handleChange('status')}
                                     />
-                                </label>
-                                <label>Vulnerable
+                                </div>
+                                <div className="status-input-container">
+                                    <label>Vulnerable</label>
                                     <input
                                         type="radio"
                                         value="Vulnerable"
+                                        name="status"
                                         checked={this.state.status === 'Vulnerable'}
                                         onChange={this.handleChange('status')}
                                     />
-                                </label>
-                            </label>
-                            <button>Sign Up</button>
+                                </div>
+                            </div>
+                            
+                            <button className="signup-modal-button signup-button">Sign Up</button>
                         </form>
                     </div>
                 </div>
             )
         }
-        
+
         return (
             <div>
-                {this.props.modal && <div>{signupForm()}</div>}
+                { !this.props.modal && signupForm() } {/* change back to this.props.modal after finished styling!!! */}
                 <button className="signup-button" onClick={() => this.props.showModal()}>Create New Account</button>
             </div>
         )
