@@ -14,6 +14,7 @@ class PostIndex extends React.Component {
                     <PostIndexItem
                         key={post.id}
                         post={post}
+                        author={post.author}
                     />
                 ))}
             </div>

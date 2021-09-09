@@ -2,7 +2,7 @@ class Post < ApplicationRecord
     validates :body, presence: true
     validates :post_author_id, presence: true, uniqueness: { scope: :body }
 
-    belongs_to :post_author,
+    belongs_to :author,
         foreign_key: :post_author_id,
         class_name: "User"
 end
