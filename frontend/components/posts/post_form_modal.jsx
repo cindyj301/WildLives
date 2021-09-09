@@ -15,7 +15,11 @@ class PostFormModal extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createPost(this.state).then(this.props.hideModal);
+        this.props.createPost(this.state).then(this.props.hideModal).then(
+            () => this.setState({
+                body: ''
+            })
+        );
     }
 
     handleChange(e) {

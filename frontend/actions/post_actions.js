@@ -50,7 +50,7 @@ export const createPost = post => (
     )
 )
 
-export const updatePost = post => (
+export const updatePost = post => ( // note: verify it works
     dispatch => (
         PostAPIUtil.updatePost(post)
             .then(post => (
@@ -62,9 +62,9 @@ export const updatePost = post => (
     )
 )
 
-export const deletePost = postId => (
+export const deletePost = (postId) => (
     dispatch => (
-        PostAPIUtil.deletePost()
+        PostAPIUtil.deletePost(postId)
             .then(() => dispatch(removePost(postId)))
     )
 )

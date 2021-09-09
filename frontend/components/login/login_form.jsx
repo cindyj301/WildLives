@@ -11,21 +11,21 @@ class LoginForm extends React.Component {
             password: ''
         }
 
-        this.errorTime = () => setTimeout(() => this.props.clearErrors(), 3000);
+        // this.errorTime = () => setTimeout(() => this.props.clearErrors(), 3000);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentDidUpdate() {
-        this.errorTime();
-    }
+    // componentDidUpdate() {
+    //     this.errorTime();
+    // }
 
-    componentWillUnmount() {
-        clearInterval(this.errorTime);
-    }
+    // componentWillUnmount() {
+    //     clearInterval(this.errorTime);
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.state);
+        this.props.login(this.state).then(this.props.clearErrors);
     }
 
     handleChange(field) {

@@ -92,4 +92,5 @@ p.signup-text {
 
 .signup-button.signup-modal-button:hover {
     background-color: rgba(63, 155, 45, 0.8);
+    transition: 0.5s;
 }

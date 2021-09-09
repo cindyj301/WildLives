@@ -77,6 +77,7 @@
 
 .login-button:hover {
     background-color: #863d2e;
+    transition: 0.5s;
 }
 
 /* demo and signup buttons */
@@ -101,6 +102,7 @@
 
 .demo-user-button p:hover {
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .demo-user-button:hover {
@@ -118,6 +120,7 @@
 
 .signup-button:hover {
     background-color: #369c22;   
+    transition: 0.5s;
 }
 
 .login-errors {

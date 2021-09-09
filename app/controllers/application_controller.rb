@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
+    # skip_before_action :verify_authenticity_token # for testing, remove later!
 
     helper_method :current_user, :logged_in?
 
@@ -10,7 +11,7 @@ class ApplicationController < ActionController::Base
     end
 
     def ensure_logged_in!
-        render json: ['Invalid credentials'], status: 401 unless logged_in? # note: change to more semantic error message?
+        render json: ['You must be logged in'], status: 401 unless logged_in? # note: change to more semantic error message?
     end
 
     def login!(user)

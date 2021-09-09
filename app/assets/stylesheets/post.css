@@ -1,0 +1,21 @@
+.news-feed-post-container {
+    background-color: green;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: max-content; */
+}
+
+.post-index-item-container {
+    /* position: relative; */
+    background-color: red;
+    /* display: flex;
+    justify-content: space-between;
+    height: 80vh;
+    width: 50vw; */
+}
+
+.post-index-item {
+    list-style: none;
+}

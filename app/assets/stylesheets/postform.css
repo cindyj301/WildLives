@@ -28,6 +28,7 @@
 
 .post-form-button p:hover {
     background-color: #dcdee0;
+    transition: 0.5s;
 }
 
 p:first-child {
@@ -87,6 +88,7 @@ p:first-child {
 
 .modal-close.post-form:hover {
     background-color: #d1d5db;
+    transition: 0.5s;
 }
 
 .modal-header-text.post-form p {
@@ -148,4 +150,5 @@ p:first-child {
 
 .modal-post-form-button:hover {
     background-color: rgb(128, 60, 45);    
+    transition: 0.5s;
 }
