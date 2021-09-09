@@ -16,6 +16,12 @@
     height: 100vh;
 }
 
+.news-feed-post-container {
+    /* height: 100vh; */
+    grid-area: main;
+    overflow: auto;
+}
+
 .contacts-container {
     grid-area: rightbar;
     overflow: hidden;

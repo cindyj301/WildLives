@@ -1,9 +1,3 @@
-.news-feed-post-container {
-    /* height: 100vh; */
-    grid-area: main;
-    overflow: auto;
-}
-
 .post-item-profile-container {
     /* background-color: green; */
     width: 100%;
