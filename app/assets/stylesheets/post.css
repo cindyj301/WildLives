@@ -1,13 +1,8 @@
 .news-feed-post-container {
-    height: 100vh;
+    /* height: 100vh; */
     grid-area: main;
-    overflow: scroll;
+    overflow: auto;
 }
-
-/* .reverse-posts {
-    display: flex;
-    flex-direction: column-reverse;
-} */
 
 .post-item-profile-container {
     /* background-color: green; */

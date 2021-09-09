@@ -11,12 +11,13 @@
 
 .navigation-container {
     grid-area: leftbar;
-    /* border: 1px solid black; */
-    height: 100vh;
+    overflow: hidden;
+    position: fixed;
 }
 
 .contacts-container {
     grid-area: rightbar;
-    /* border: 1px solid black; */
-    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
 }
