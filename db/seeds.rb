@@ -38,7 +38,7 @@ user2 = User.create!(
 
 post1 = Post.create!(
     body: "Down with deforestation",
-    post_author_id: user2.id
+    post_author_id: user1.id
 )
 
 post2 = Post.create!(
@@ -48,5 +48,5 @@ post2 = Post.create!(
 
 post3 = Post.create!(
     body: "Please don't pollute the oceans",
-    post_author_id: user3.id
+    post_author_id: user2.id
 )
