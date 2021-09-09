@@ -1,21 +1,30 @@
 .news-feed-post-container {
-    background-color: green;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: max-content; */
+    height: 100vh;
+    grid-area: main;
+    overflow: scroll;
+}
+
+/* .reverse-posts {
+    display: flex;
+    flex-direction: column-reverse;
+} */
+
+.post-item-profile-container {
+    /* background-color: green; */
+    width: 100%;
 }
 
 .post-index-item-container {
-    /* position: relative; */
-    background-color: red;
-    /* display: flex;
-    justify-content: space-between;
-    height: 80vh;
-    width: 50vw; */
+    /* background-color: red; */
+    width: 95%;
+    background-color: white;
+    padding: 5px;
+    border-radius: 6px;
+    margin: 10px;
+    box-shadow: 0 0 5px rgba(184, 188, 192, 0.801);
 }
 
 .post-index-item {
-    list-style: none;
+    /* border: 1px solid black; */
+    margin: 10px 0px;
 }

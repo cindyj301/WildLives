@@ -1,3 +1,22 @@
 .news-feed-container {
-    background-color: honeydew;
+    background-color: #f0f2f5;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    justify-content: center;
+    gap: 10px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "leftbar main rightbar"
+}
+
+.navigation-container {
+    grid-area: leftbar;
+    /* border: 1px solid black; */
+    height: 100vh;
+}
+
+.contacts-container {
+    grid-area: rightbar;
+    /* border: 1px solid black; */
+    height: 100vh;
 }

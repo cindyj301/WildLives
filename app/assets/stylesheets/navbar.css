@@ -88,6 +88,8 @@
     position: sticky;
     display: flex;
     justify-content: space-between;
+    top: 0;
+    z-index: 3;
 }
 
 .navbar-nav {

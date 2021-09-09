@@ -3,24 +3,26 @@
     display: flex;
     justify-content: center;
     position: relative;
-    top: 80px;
+    margin-top: 40px; /* control top level of post form button */
 }
 
 .post-form-button {
     background-color: white;
     display: flex;
-    width: 500px;
+    width: 95%;
     height: 100px;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    padding: 0px 5px;
+    box-shadow: 0 0 6px rgba(184, 188, 192, 0.801);
 }
 
 .post-form-button p {
     background-color: #E9EBEE;
     cursor: pointer;
     padding: 10px 12px 8px 10px;
-    width: 400px;
+    width: 90%;
     height: 35px;
     border-radius: 20px;
     color: #65676B;

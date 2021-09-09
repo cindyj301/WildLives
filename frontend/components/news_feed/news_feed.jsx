@@ -15,6 +15,7 @@ const NewsFeed = ({ currentUser }) => {
                 <Navigation /> {/*  change to container */}
                 <div className="news-feed-post-container">
                     <PostFormContainer />
+                    <br />
                     <PostIndexContainer />
                 </div>
                 <Contacts /> {/*  change to container */}
