@@ -4,7 +4,7 @@ import { clearErrors, signup } from '../../actions/session_actions';
 import { hideModal, showModal } from "../../actions/modal_actions";
 import SignupModal from "./signup_form_modal";
 
-const mSTP = ({ errors }) => ({
+const mSTP = ({ errors, ui }) => ({
     errors: errors.signup,
     modal: ui.modal
 })

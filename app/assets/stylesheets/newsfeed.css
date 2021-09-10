@@ -14,6 +14,9 @@
     overflow: hidden;
     position: fixed;
     height: 100vh;
+    /* background: khaki; */
+    border: 1px solid black;
+    width: 28%;
 }
 
 .news-feed-post-container {
@@ -27,4 +30,7 @@
     position: fixed;
     right: 0;
     height: 100vh;
+    /* background: khaki; */
+    border: 1px solid black;
+    width: 28%;
 }

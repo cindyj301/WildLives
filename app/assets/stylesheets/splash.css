@@ -16,7 +16,7 @@
 }
 
 .splash-logo {
-    color: #954535;
+    color: rgb(111, 78, 55);
     font-size: 50px;
     font-weight: bold;
 }
@@ -60,11 +60,11 @@
     border: none;
     border-radius: 6px;
     outline: none;
-    box-shadow: 0 0 2px 2px #954535a6;
+    box-shadow: 0 0 1.5px 1.5px rgba(111, 78, 55, 0.815);
 }
-
+	
 .login-button {
-    background-color: #954535;
+    background-color: rgb(111, 78, 55);
     color: white;
     margin: 10px 10px;
     padding: 10px;
@@ -76,7 +76,7 @@
 }
 
 .login-button:hover {
-    background-color: #863d2e;
+    background-color: rgb(92, 64, 43);
     transition: 0.5s;
 }
 
@@ -89,7 +89,7 @@
 }
 
 .demo-user-button {
-    color: #954535;
+    color: rgb(111, 78, 55);
     font-size: 12px;
     height: 40px;
     border-bottom: 0.5px solid rgb(179, 179, 179);

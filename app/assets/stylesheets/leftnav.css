@@ -1,0 +1,28 @@
+.left-nav-item-container {
+    background: lawngreen;
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 20px; */
+    margin-left: 10px;
+}
+
+.left-nav-item-container:first-child {
+    margin-top: 5px;
+}
+
+.left-nav-icon-container {
+    margin: 10px 0;
+    background: lightblue;
+    padding: 6px;
+}
+
+.friends-icon {
+    width: 36px;
+    height: 36px;
+
+}
+
+.profile-icon.left-nav {
+    width: 36px;
+    height: 36px;
+}
