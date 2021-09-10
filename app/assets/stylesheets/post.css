@@ -81,14 +81,26 @@
 
 /* comment input */
 .comment-input-container {
-    background-color: red;
     display: flex;
     align-items: center;
 }
 
-.profile-icon.post-item.comment-input {
+.profile-icon.post-item.comment-input-img {
     width: 30px;
     height: 30px;
+}
+
+.comment-input {
+    background-color: #F2F3F5;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 5px;
+    width: 100%;
+    margin-right: 2px;
+}
+
+.comment-input:focus {
+    outline: none;
 }
 
 /* comment text background color  #F2F3F5 */
