@@ -76,7 +76,7 @@ class PostFormModal extends React.Component {
             <div>
                 {this.props.modal && postForm()}
                 <div className="post-form-button-container">
-                    <div className='post-form-button' onClick={() => this.props.showModal()}>
+                    <div className='post-form-button'>
                         <li className="profile-container">
                             <img
                                 className="profile-icon"
@@ -84,7 +84,7 @@ class PostFormModal extends React.Component {
                                 alt='profile-icon'
                             />
                         </li>
-                        <p>What's on your mind, {capitalize(this.props.currentUser.fname)}?</p>
+                        <p onClick={() => this.props.showModal()}>What's on your mind, {capitalize(this.props.currentUser.fname)}?</p>
                     </div>
                 </div>
             </div>

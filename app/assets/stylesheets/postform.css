@@ -1,21 +1,20 @@
 /* create post input */
 .post-form-button-container {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    margin-top: 40px; /* control top level of post form button */
+    margin: 0px 5px;
 }
 
 .post-form-button {
     background-color: white;
     display: flex;
-    width: 95%;
-    height: 100px;
+    width: 100%;
+    height: 90px;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    padding: 0px 5px;
-    box-shadow: 0 0 6px rgba(184, 188, 192, 0.801);
+    margin-top: 40px;  /* control top level of post form button */
+    margin-bottom: 20px;
+    padding: 0px 7px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .post-form-button p {

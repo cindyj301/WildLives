@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 // component imports
 import NavBarItem from './navbar_item';
@@ -32,7 +33,9 @@ const NavBar = ({ currentUser }) => {
   return (
     <nav className="navbar">
       <div className="navbar-icons">
-        <img className="sloth-logo hover" src={window.slothLogo} alt="sloth" />
+        <Link to="/feed">
+          <img className="sloth-logo hover" src={window.slothLogo} alt="sloth" />
+        </Link>
         <img src={window.homeLogo} alt="home-icon" className="home-icon hover" />
       </div>
       <ul className="navbar-nav">

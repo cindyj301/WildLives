@@ -20,7 +20,7 @@ class LoginForm extends React.Component {
     // }
 
     // componentWillUnmount() {
-    //     clearInterval(this.errorTime);
+    //     clearInterval(this.errorTime());
     // }
 
     handleSubmit(e) {

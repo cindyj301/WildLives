@@ -7,6 +7,7 @@
 .sloth-logo {
     width: 50px;
     height: 50px;
+    margin-left: 10px;
 }
 
 .home-icon {
@@ -74,10 +75,11 @@
 }
 
 .navbar-icons {
-    width: 50%;
+    width: 51%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* background-color: chartreuse; */
 }
 
 /* navbar */
