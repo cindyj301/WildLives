@@ -12,7 +12,6 @@ const postsReducer = (state = {}, action) => {
         case RECEIVE_POSTS:
             return action.posts;
         case RECEIVE_POST:
-            // debugger;
             nextState[action.post.id] = action.post;
             return nextState;
         case REMOVE_POST:

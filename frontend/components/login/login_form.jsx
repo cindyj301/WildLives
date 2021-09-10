@@ -11,17 +11,8 @@ class LoginForm extends React.Component {
             password: ''
         }
 
-        // this.errorTime = () => setTimeout(() => this.props.clearErrors(), 3000);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    // componentDidUpdate() {
-    //     this.errorTime();
-    // }
-
-    // componentWillUnmount() {
-    //     clearInterval(this.errorTime());
-    // }
 
     handleSubmit(e) {
         e.preventDefault();

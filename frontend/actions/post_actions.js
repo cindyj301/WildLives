@@ -43,10 +43,7 @@ export const createPost = post => (
     dispatch => (
         PostAPIUtil.createPost(post)
             .then(post => (
-                dispatch(receivePost(post))
-            ), error => (
-                dispatch(receivePostErrors(error.responseJSON))
-            ))
+                dispatch(receivePost(post)))) // no errors appear on fb for creating a post
     )
 )
 

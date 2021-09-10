@@ -12,17 +12,8 @@ class SignupModal extends React.Component {
             status: ''
         }
 
-        // this.errorTime = () => setTimeout(() => this.props.clearErrors(), 3000);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    // componentDidUpdate() {
-    //     this.errorTime();
-    // }
-
-    // componentWillUnmount() {
-    //     clearInterval(this.errorTime());
-    // }
 
     handleSubmit(e) {
         e.preventDefault();

@@ -15,6 +15,9 @@ const PostIndexItem = ({ body, fname, lname, date }) => {
                     <span className="name">{capitalize(fname) + " " + capitalize(lname)}</span>
                     <span className="date">{date}</span>
                 </div>
+                <div>
+                    
+                </div>
             </div>
             <div className="post-body">
                 {body}
