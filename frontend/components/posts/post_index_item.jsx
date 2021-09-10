@@ -1,8 +1,17 @@
 import React from 'react'
 
+// component imports
+import PostModifyIcon from './post_modify_icon';
+import PostDropdownMenu from './post_dropdown_menu';
+
+// util imports
 import { capitalize } from '../../util/format_util';
 
 const PostIndexItem = ({ body, fname, lname, date }) => {
+    const modifyIcon = () => (
+        <img src={modifyPost} alt="modify-post" />
+    )
+
     return (
         <div className="post-index-item-container">
             <div className="post-item-profile-container">
@@ -15,9 +24,9 @@ const PostIndexItem = ({ body, fname, lname, date }) => {
                     <span className="name">{capitalize(fname) + " " + capitalize(lname)}</span>
                     <span className="date">{date}</span>
                 </div>
-                <div>
-                    
-                </div>
+                <PostModifyIcon icon={modifyIcon()}>
+                    <PostDropdownMenu />
+                </PostModifyIcon>
             </div>
             <div className="post-body">
                 {body}

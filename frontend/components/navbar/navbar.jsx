@@ -10,10 +10,7 @@ import { capitalize } from '../../util/format_util';
 
 const NavBar = ({ currentUser }) => {
   const accountIcon = () => (
-    <img
-        src={window.accountLogo}
-        alt="account-dropdown-icon"
-      />
+    <img src={accountLogo} alt="account-dropdown-icon" />
   )
   
   const profileIcon = () => {
@@ -34,9 +31,9 @@ const NavBar = ({ currentUser }) => {
     <nav className="navbar">
       <div className="navbar-icons">
         <Link to="/feed">
-          <img className="sloth-logo hover" src={window.slothLogo} alt="sloth" />
+          <img className="sloth-logo hover" src={slothLogo} alt="sloth" />
         </Link>
-        <img src={window.homeLogo} alt="home-icon" className="home-icon hover" />
+        <img src={homeLogo} alt="home-icon" className="home-icon hover" />
       </div>
       <ul className="navbar-nav">
         {profileIcon()}

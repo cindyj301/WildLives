@@ -36,7 +36,7 @@ class PostFormModal extends React.Component {
                                 </div>
                                 <img
                                     className="modal-close post-form"
-                                    src={window.close}
+                                    src={close}
                                     onClick={() => this.props.hideModal()}
                                     />
                             </div>

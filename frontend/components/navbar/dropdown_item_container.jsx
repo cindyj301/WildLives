@@ -5,7 +5,7 @@ import { logout } from '../../actions/session_actions';
 import DropdownItem from "./dropdown_item";
 
 const mSTP = () => ({
-    leftIcon: <img src={window.logoutLogo} alt="logout-icon" />
+    leftIcon: <img src={logoutLogo} alt="logout-icon" />
 })
 
 const mDTP = dispatch => ({
