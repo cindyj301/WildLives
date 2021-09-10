@@ -115,8 +115,7 @@
     position: absolute;
     top: 54px;
     width: 360px;
-    transform:  /* translateX(-45%); moving menu to the left using transform property to translate it 45% */ 
-    translateX(0%) translateZ(1px);
+    transform: translateX(0%) translateZ(1px); /* translateX(-45%); moving menu to the left using transform property to translate it 45% */ 
     background-color: white;
     border-radius: 5px;
     padding: 1rem;

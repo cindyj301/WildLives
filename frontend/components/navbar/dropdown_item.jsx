@@ -1,9 +1,9 @@
 import React from 'react'
 
-const DropdownItem = props => {
+const DropdownItem = ({ logout, leftIcon }) => {
   return (
-    <div onClick={props.logout} className="menu-item">
-      <span className="icon-left">{props.leftIcon}</span>
+    <div onClick={logout} className="menu-item">
+      <span className="icon-left">{leftIcon}</span>
       <p className="logout-text">Log Out</p>
     </div>
   )

@@ -34,6 +34,7 @@ class PostIndex extends React.Component {
                 {posts.map(post => (
                     <PostIndexItem
                         key={post.id}
+                        postId={post.id}
                         body={post.body}
                         fname={post.author.fname}
                         lname={post.author.lname}

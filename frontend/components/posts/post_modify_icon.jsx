@@ -14,10 +14,19 @@ export class PostModifyIcon extends React.Component {
     }
 
     render() {
+        const modifyIcon = () => (
+            <img
+                src={modifyPost}
+                alt="modify-post"
+                className="modify-post-icon"
+                onClick={this.handleClick}
+            />
+        )
+
         return (
             <div>
-                {this.props.icon}
-                { this.state.open && this.props.children }
+                {modifyIcon()}
+                { !this.state.open && this.props.children } {/* change back to this.state.open after testing is finished */}
             </div>
         )
     }

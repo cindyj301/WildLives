@@ -3,11 +3,11 @@ import React from 'react'
 import EditPostContainer from './edit_post_container';
 import DeletePostContainer from './delete_post_container';
 
-const PostDropdownMenu = () => {
+const PostDropdownMenu = ({ postId }) => {
     return (
-        <div>
-            <EditPostContainer />
-            <DeletePostContainer />
+        <div className="post-dropdown">
+            <EditPostContainer postId={postId} />
+            <DeletePostContainer postId={postId} />
         </div>
     )
 }

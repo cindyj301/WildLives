@@ -36,8 +36,6 @@ class Api::PostsController < ApplicationController
 
         if @post && @post.destroy
             render json: {}
-        else
-            render json: @post.errors.full_messages, status: 422
         end
     end
 

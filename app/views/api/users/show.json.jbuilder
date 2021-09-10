@@ -1,6 +1,6 @@
 # if @user
     json.extract! @user, :id, :fname, :lname, :email, :animal, :status
-    json.posts @user.posts, :id, :body, :post_author_id, :created_at
+    # json.extract! @user.posts, :post_author_id
 # end
 
 # json.posts @user.posts.each do |post|

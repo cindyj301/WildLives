@@ -1,0 +1,59 @@
+/* ellipse icon */
+.modify-post-icon {
+    width: 28px;
+    height: 28px;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+.modify-post-icon:hover {
+    background-color: #EBEDF0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+/* dropdown menu */
+.post-dropdown {
+    position: absolute;
+    transform: translateY(25%) translateZ(1px) translateX(-78%); /* translate menu relative to ellipse icon */
+    /* background: deepskyblue; */
+    padding: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    background: white;
+}
+
+ /* dropdown triangle */
+.post-dropdown:before {
+  content: "";
+  position: absolute;
+  border: solid transparent;
+  border-bottom-color: white;
+  border-width: 11px;
+  margin-left: -10px;
+  top: -22px; /* move arrow up and down */ 
+  right: 10px; /* translate arrow along top of dropdown */
+  z-index: 1;
+} 
+
+/* dropdown menu item */
+.post-menu-item {
+    /* background-color: darkgreen; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.post-menu-item:hover {
+    background-color: #e4e6eb;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.modify-post-text {
+    font-size: 14px;
+    font-weight: 525;
+}

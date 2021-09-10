@@ -11,12 +11,18 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* name and date header */
+/* post header */
+.post-item-header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .post-item-profile-container {
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    /* background-color: burlywood; */
 }
 
 .name-date-container {
