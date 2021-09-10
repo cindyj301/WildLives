@@ -1,11 +1,13 @@
 /* icons */
 .hover:hover {
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .sloth-logo {
     width: 50px;
     height: 50px;
+    margin-left: 10px;
 }
 
 .home-icon {
@@ -26,6 +28,7 @@
 .profile-icon-container.hover:hover {
     background-color: #F2F3F5;
     border-radius: 40px;
+    transition: 0.5s;
 }
 
 .profile-icon {
@@ -47,6 +50,7 @@
 
 .icon-button:hover {
     background-color: #d1d5db; 
+    transition: 0.5s;
 }
 
 .icon-button img {
@@ -71,10 +75,11 @@
 }
 
 .navbar-icons {
-    width: 50%;
+    width: 51%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* background-color: chartreuse; */
 }
 
 /* navbar */
@@ -85,6 +90,8 @@
     position: sticky;
     display: flex;
     justify-content: space-between;
+    top: 0;
+    z-index: 3;
 }
 
 .navbar-nav {
@@ -128,6 +135,7 @@
 .menu-item:hover {
     background-color: #EBEDF0;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .logout-text {

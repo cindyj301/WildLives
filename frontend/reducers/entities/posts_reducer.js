@@ -2,7 +2,7 @@ import {
     RECEIVE_POSTS,
     RECEIVE_POST,
     REMOVE_POST
-} from '../actions/post_actions';
+} from '../../actions/post_actions';
 
 const postsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -12,6 +12,7 @@ const postsReducer = (state = {}, action) => {
         case RECEIVE_POSTS:
             return action.posts;
         case RECEIVE_POST:
+            // debugger;
             nextState[action.post.id] = action.post;
             return nextState;
         case REMOVE_POST:

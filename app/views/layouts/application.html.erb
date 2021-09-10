@@ -8,12 +8,17 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
      <%= javascript_include_tag 'application' %>
+     
      <script type="text/javascript">
       window.logoutLogo = "<%= image_url('logout_icon.png') %>";
       window.accountLogo = "<%= image_url('account_dropdown_icon.png') %>";
       window.slothLogo = "<%= image_url('sloth_logo.png') %>";
       window.homeLogo = "<%= image_url('home_icon.png') %>";
+      window.close = "<%= image_url('close.png') %>";
+      window.comment = "<%= image_url('comment.png') %>";
     </script>
+
+    <link rel="shortcut icon" type="image/jpg" href="<%= image_url('sloth_logo.png') %>" />
   </head>
 
   <body>

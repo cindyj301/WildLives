@@ -9,7 +9,7 @@
 User.destroy_all
 Post.destroy_all
 
-user1 = User.create!(
+demo_user = User.create!(
     fname: "Sally",
     lname: "Sloth",
     email: "iluvsloths@gmail.com",
@@ -18,7 +18,7 @@ user1 = User.create!(
     status: "Critically Endangered"
 )
 
-user2 = User.create!(
+user1 = User.create!(
     fname: "Monk",
     lname: "Key",
     email: "bananas@yahoo.com",
@@ -27,7 +27,7 @@ user2 = User.create!(
     status: "Critically Endangered"
 )
 
-user3 = User.create!(
+user2 = User.create!(
     fname: "Tommy",
     lname: "Turtle",
     email: "seaweed_da_best@gmail.com",
@@ -38,15 +38,15 @@ user3 = User.create!(
 
 post1 = Post.create!(
     body: "Down with deforestation",
-    post_author_id: user2.id
+    post_author_id: user1.id
 )
 
 post2 = Post.create!(
     body: "Hanging around with some friends; might take a nap later",
-    post_author_id: user1.id
+    post_author_id: demo_user.id
 )
 
 post3 = Post.create!(
     body: "Please don't pollute the oceans",
-    post_author_id: user3.id
+    post_author_id: user2.id
 )

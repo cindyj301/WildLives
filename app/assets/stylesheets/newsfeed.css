@@ -1,0 +1,30 @@
+.news-feed-container {
+    background-color: #f0f2f5;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    justify-content: center;
+    gap: 20px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "leftbar main rightbar"
+}
+
+.navigation-container {
+    grid-area: leftbar;
+    overflow: hidden;
+    position: fixed;
+    height: 100vh;
+}
+
+.news-feed-post-container {
+    grid-area: main;
+    overflow: auto;
+}
+
+.contacts-container {
+    grid-area: rightbar;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    height: 100vh;
+}

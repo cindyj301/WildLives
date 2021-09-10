@@ -1,25 +1,27 @@
+/* create post input */
 .post-form-button-container {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    top: 80px;
+    margin: 0px 5px;
 }
 
 .post-form-button {
     background-color: white;
     display: flex;
-    width: 500px;
-    height: 100px;
+    width: 100%;
+    height: 90px;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    margin-top: 40px;  /* control top level of post form button */
+    margin-bottom: 20px;
+    padding: 0px 7px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .post-form-button p {
     background-color: #E9EBEE;
     cursor: pointer;
     padding: 10px 12px 8px 10px;
-    width: 400px;
+    width: 90%;
     height: 35px;
     border-radius: 20px;
     color: #65676B;
@@ -27,6 +29,7 @@
 
 .post-form-button p:hover {
     background-color: #dcdee0;
+    transition: 0.5s;
 }
 
 p:first-child {
@@ -39,4 +42,114 @@ p:first-child {
     align-items: center;
     justify-content: space-between;
     width: 40px;
+}
+
+/* post form modal */
+.modal-post-form-container {
+    max-width: 500px;
+    max-height: 428px;
+}
+
+.modal-background.post-form {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 10;
+}
+
+.modal-child.post-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+/* post form header */
+.modal-header.post-form {
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    align-items: center;
+    border-bottom: 0.5px solid rgb(207, 205, 205);
+    padding-bottom: 15px;
+}
+
+.modal-close.post-form {
+    background-color: #e4e6eb;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 7px;
+}
+
+.modal-close.post-form:hover {
+    background-color: #d1d5db;
+    transition: 0.5s;
+}
+
+.modal-header-text.post-form p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.post-form-profile-icon-container {
+    height: 40px;
+    padding: 30px 0px;
+    display: flex;
+    align-items: center;
+}
+
+.profile-icon-container.post-form {
+    display: flex;
+    justify-content: flex-start;
+    width: 200px;
+    padding-left: 7px;
+    margin: 0px;
+    height: 40px;
+}
+
+.profile-icon-container.post-form span {
+    width: 100px;
+    margin-left: 7px;
+}
+
+/* modal post form inputs */
+.modal-form.post-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-post-form-input {
+    width: 100%;
+    height: 155px;
+    overflow: hidden;
+    resize: none;
+    border: none;
+    font-size: 20px;
+    font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+}
+
+.modal-post-form-input:focus {
+    outline: none;
+}
+
+.modal-post-form-button {
+    background-color: rgb(149, 69, 53);
+    color: white;
+    font-weight: 400;
+    width: 100%;
+    margin-top: 10px;
+    height: 36px;
+    border-radius: 6px;
+}
+
+.modal-post-form-button:hover {
+    background-color: rgb(128, 60, 45);    
+    transition: 0.5s;
 }
