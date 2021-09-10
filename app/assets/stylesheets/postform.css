@@ -140,7 +140,7 @@ p:first-child {
 }
 
 .modal-post-form-button {
-    background-color: rgb(149, 69, 53);
+    background-color: rgb(111, 78, 55);
     color: white;
     font-weight: 400;
     width: 100%;
@@ -150,6 +150,6 @@ p:first-child {
 }
 
 .modal-post-form-button:hover {
-    background-color: rgb(128, 60, 45);    
+    background-color: rgb(99, 67, 45);    
     transition: 0.5s;
 }

@@ -1,28 +1,70 @@
 .left-nav-item-container {
-    background: lawngreen;
+    /* background: lawngreen; */
     display: flex;
     flex-direction: column;
-    /* margin-top: 20px; */
     margin-left: 10px;
 }
 
 .left-nav-item-container:first-child {
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
-.left-nav-icon-container {
-    margin: 10px 0;
-    background: lightblue;
+/* .left-nav-icon-container {
     padding: 6px;
+} */
+
+/* profile icon */
+.left-nav-profile-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+    border-radius: 8px;
+    /* background: palevioletred; */
 }
 
-.friends-icon {
-    width: 36px;
-    height: 36px;
+.left-nav-profile-container:hover {
+    background-color: #dbdde0;
+    cursor: pointer;
+    transition: 0.5s;
+}
 
+.left-nav-profile-container span {
+    font-size: 0.9375rem;
+    color: #050505;
 }
 
 .profile-icon.left-nav {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 0.5px solid rgba(170, 169, 169, 0.808);
+}
+
+/* friends icon */
+.left-nav-friends-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+    border-radius: 8px;
+    /* background: palevioletred; */
+}
+
+.left-nav-friends-container:hover {
+    background-color: #dbdde0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.left-nav-friends-container span {
+    font-size: 0.9375rem;
+    color: #050505;
+}
+
+.friends-icon {
     width: 36px;
     height: 36px;
 }

@@ -15,8 +15,8 @@
     position: fixed;
     height: 100vh;
     /* background: khaki; */
-    border: 1px solid black;
-    width: 28%;
+    /* border: 1px solid black; */
+    width: 25%;
 }
 
 .news-feed-post-container {
@@ -31,6 +31,6 @@
     right: 0;
     height: 100vh;
     /* background: khaki; */
-    border: 1px solid black;
-    width: 28%;
+    /* border: 1px solid black; */
+    width: 25%;
 }
