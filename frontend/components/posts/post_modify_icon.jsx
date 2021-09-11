@@ -26,7 +26,7 @@ export class PostModifyIcon extends React.Component {
         return (
             <div>
                 {modifyIcon()}
-                { !this.state.open && this.props.children } {/* change back to this.state.open after testing is finished */}
+                { this.state.open && this.props.children } {/* change back to this.state.open after testing is finished */}
             </div>
         )
     }

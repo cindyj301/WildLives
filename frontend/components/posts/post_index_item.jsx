@@ -7,7 +7,23 @@ import PostDropdownMenu from './post_dropdown_menu';
 // util imports
 import { capitalize } from '../../util/format_util';
 
-const PostIndexItem = ({ body, fname, lname, date, postId }) => {
+const PostIndexItem = ({ body, fname, lname, date, postId, postAuthorId, currentUserId }) => {
+    const modifyIcon = () => (
+        <img
+            src={modifyPost}
+            alt="modify-post"
+            className="modify-post-icon"
+        />
+    )
+
+    const modifyPostOptions = () => {
+        return (postAuthorId === currentUserId) ? (
+            <PostModifyIcon icon={modifyIcon()}>
+                <PostDropdownMenu postId={postId} />
+            </PostModifyIcon>
+        ) : null; 
+    }
+
     return (
         <div className="post-index-item-container">
             <div className="post-item-header-container">
@@ -22,9 +38,7 @@ const PostIndexItem = ({ body, fname, lname, date, postId }) => {
                         <span className="date">{date}</span>
                     </div>
                 </div>
-                <PostModifyIcon>
-                    <PostDropdownMenu postId={postId} />
-                </PostModifyIcon>
+                {modifyPostOptions()}
             </div>
             <div className="post-body">
                 {body}

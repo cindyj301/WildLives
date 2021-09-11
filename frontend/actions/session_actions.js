@@ -7,7 +7,7 @@ export const RECEIVE_LOGIN_ERRORS = 'RECEIVE_LOGIN_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 // regular action creators
-const receiveCurrentUser = currentUser => ({
+export const receiveCurrentUser = currentUser => ({
     type: RECEIVE_CURRENT_USER,
     currentUser
 })
