@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SignupFormContainer from '../signup/signup_form_container';
+import Modal from '../modal/modal';
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -78,7 +78,8 @@ class LoginForm extends React.Component {
                         <div className="demo-user-button">
                             <p onClick={(e) => this.handleDemoUser(e)}>Log in as Demo Sloth</p>
                         </div>
-                        <SignupFormContainer />
+                        <Modal />
+                        <button className="signup-button" onClick={() => this.props.showModal()}>Create New Account</button>
                     </div>
                 </div>
             </div>

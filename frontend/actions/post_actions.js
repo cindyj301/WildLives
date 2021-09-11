@@ -47,9 +47,9 @@ export const createPost = post => (
     )
 )
 
-export const updatePost = post => (
+export const updatePost = (post, id) => (
     dispatch => (
-        PostAPIUtil.updatePost(post)
+        PostAPIUtil.updatePost(post, id)
             .then(post => (
                 dispatch(receivePost(post))))       
     )

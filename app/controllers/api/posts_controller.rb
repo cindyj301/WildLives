@@ -11,7 +11,7 @@ class Api::PostsController < ApplicationController
         render :show
     end
 
-    def create # note: review
+    def create
         @post = current_user.posts.new(post_params)
 
         if @post.save
@@ -21,7 +21,7 @@ class Api::PostsController < ApplicationController
         end
     end
     
-    def update # note: review
+    def update
         @post = current_user.posts.find_by(id: params[:id])
         
         if @post && @post.update(post_params)
@@ -40,6 +40,6 @@ class Api::PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:id, :body) # add body to permitted params so updated post data can come thru correctly in update post ajax request
+        params.require(:post).permit(:body)
     end
 end

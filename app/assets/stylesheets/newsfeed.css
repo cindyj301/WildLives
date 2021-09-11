@@ -14,8 +14,6 @@
     overflow: hidden;
     position: fixed;
     height: 100vh;
-    /* background: khaki; */
-    /* border: 1px solid black; */
     width: 25%;
 }
 
@@ -30,7 +28,5 @@
     position: fixed;
     right: 0;
     height: 100vh;
-    /* background: khaki; */
-    /* border: 1px solid black; */
     width: 25%;
 }

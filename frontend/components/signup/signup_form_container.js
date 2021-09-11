@@ -2,7 +2,7 @@ import { connect } from "react-redux"
 
 import { clearErrors, signup } from '../../actions/session_actions';
 import { hideModal, showModal } from "../../actions/modal_actions";
-import SignupModal from "./signup_form";
+import SignupForm from "./signup_form";
 
 const mSTP = ({ errors, ui }) => ({
     errors: errors.signup,
@@ -16,4 +16,4 @@ const mDTP = dispatch => ({
     clearErrors: () => dispatch(clearErrors())
 })
 
-export default connect(mSTP, mDTP)(SignupModal);
+export default connect(mSTP, mDTP)(SignupForm);

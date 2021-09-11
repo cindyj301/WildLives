@@ -13,11 +13,11 @@ class PostForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+
         let formData = new FormData();
         formData.append("post[body]", this.state.body);
-        formData.append("post[id]", this.state.id);
-        
-        this.props.processForm(formData).then(this.props.hideModal());
+
+        this.props.processForm(formData, this.state.id).then(this.props.hideModal());
     }
 
     handleChange(e) {
@@ -25,7 +25,10 @@ class PostForm extends React.Component {
     }
 
     render() {
-        const { formType, currentUser, hideModal, submitType } = this.props;
+        const { formType, currentUser, hideModal, submitType, post } = this.props;
+
+        if (!post) return null;
+
         return (
             <div className="modal-post-form-container">
                 <div className="modal-header post-form">

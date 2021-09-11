@@ -27,13 +27,19 @@ function Modal({ modal, hideModal, postId }) {
             return null;
     }
 
-    return (
+    return (modal !== 'signup') ? (
         <div className="modal-background post-form" onClick={hideModal}>
             <div className="modal-child post-form" onClick={e => e.stopPropagation()}>
                 {component}
             </div>
+        </div> 
+    ) : (
+        <div className="modal-container" onClick={hideModal}>
+            <div className="modal" onClick={e => e.stopPropagation()}>
+                {component}
+            </div>
         </div>
-    );
+    )
 }
 
 const mSTP = ({ ui }) => {

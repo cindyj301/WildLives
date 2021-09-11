@@ -6,10 +6,6 @@ import { hideModal, showModal } from '../../actions/modal_actions';
 import { updatePost, fetchPost } from '../../actions/post_actions';
 
 class EditPostForm extends React.Component {
-    componentDidMount() {
-        this.props.fetchPost(this.props.postId)
-    }
-
     render() {
         const { processForm, formType, post, submitType, currentUser, showModal, hideModal } = this.props;
 
@@ -30,7 +26,6 @@ class EditPostForm extends React.Component {
 }
 
 const mSTP = ({ entities: { users, posts }, session }, ownProps) => {
-
     return {
         post: posts[ownProps.postId],
         currentUser: users[session.id],
@@ -43,7 +38,7 @@ const mSTP = ({ entities: { users, posts }, session }, ownProps) => {
 const mDTP = dispatch => ({
     hideModal: () => dispatch(hideModal()),
     showModal: () => dispatch(showModal('edit')),
-    processForm: post => dispatch(updatePost(post)),
+    processForm: (post, id) => dispatch(updatePost(post, id)),
     fetchPost: postId => dispatch(fetchPost(postId))
 })
 
