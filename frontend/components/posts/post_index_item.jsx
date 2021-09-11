@@ -2,7 +2,7 @@ import React from 'react'
 
 // component imports
 import PostModifyIcon from './post_modify_icon';
-import PostDropdownMenu from './post_dropdown_menu';
+// import PostDropdownMenu from './post_dropdown_menu';
 
 // util imports
 import { capitalize } from '../../util/format_util';
@@ -18,8 +18,8 @@ const PostIndexItem = ({ body, fname, lname, date, postId, postAuthorId, current
 
     const modifyPostOptions = () => {
         return (postAuthorId === currentUserId) ? (
-            <PostModifyIcon icon={modifyIcon()}>
-                <PostDropdownMenu postId={postId} />
+            <PostModifyIcon icon={modifyIcon()} postId={postId}>
+                
             </PostModifyIcon>
         ) : null; 
     }

@@ -26,9 +26,7 @@ class Api::PostsController < ApplicationController
         
         if @post && @post.update(post_params)
             render :show
-        else
-           render json: @post.errors.full_messages, status: 422
-        end 
+        end
     end
 
     def destroy
@@ -42,6 +40,6 @@ class Api::PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:body)
+        params.require(:post).permit(:id, :body) # add body to permitted params so updated post data can come thru correctly in update post ajax request
     end
 end

@@ -1,20 +1,50 @@
+import React from "react";
 import { connect } from "react-redux"
 
-import EditPostModal from "./edit_post_modal";
-import { updatePost, fetchPost } from '../../actions/post_actions';
+import PostForm from "./post_form";
 import { hideModal, showModal } from '../../actions/modal_actions';
+import { updatePost, fetchPost } from '../../actions/post_actions';
 
-const mSTP = ({ entities: { users, posts }, ui, session }, ownProps) => ({
-    post: posts[ownProps.postId],
-    modal: ui.modal,
-    currentUser: users[session.id]
-})
+class EditPostForm extends React.Component {
+    componentDidMount() {
+        this.props.fetchPost(this.props.postId)
+    }
+
+    render() {
+        const { processForm, formType, post, submitType, currentUser, showModal, hideModal } = this.props;
+
+        if (!post) return null;
+
+        return (
+            <PostForm 
+                processForm={processForm}
+                formType={formType}
+                post={post}
+                submitType={submitType}
+                currentUser={currentUser}
+                showModal={showModal}
+                hideModal={hideModal}
+            />
+        )
+    }
+}
+
+const mSTP = ({ entities: { users, posts }, session }, ownProps) => {
+
+    return {
+        post: posts[ownProps.postId],
+        currentUser: users[session.id],
+        formType: 'Edit Post',
+        submitType: 'Save',
+        postId: ownProps.postId
+    }
+}
 
 const mDTP = dispatch => ({
-    updatePost: post => dispatch(updatePost(post)),
-    fetchPost: postId => dispatch(fetchPost(postId)),
     hideModal: () => dispatch(hideModal()),
-    showModal: () => dispatch(showModal())
+    showModal: () => dispatch(showModal('edit')),
+    processForm: post => dispatch(updatePost(post)),
+    fetchPost: postId => dispatch(fetchPost(postId))
 })
 
-export default connect(mSTP, mDTP)(EditPostModal);
+export default connect(mSTP, mDTP)(EditPostForm);

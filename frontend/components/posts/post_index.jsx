@@ -5,7 +5,7 @@ import PostIndexItem from './post_index_item';
 class PostIndex extends React.Component {
     componentDidMount() {
         this.props.fetchPosts();
-        this.props.receiveCurrentUser(this.props.currentUser);
+        // this.props.receiveCurrentUser(this.props.currentUser);
     }
 
     formatDate(createdAt) {
@@ -28,7 +28,7 @@ class PostIndex extends React.Component {
     }
 
     render() {
-        const { posts } = this.props;
+        const { posts, currentUser } = this.props;
 
         return (
             <div className="post-item-class-container">
@@ -38,7 +38,7 @@ class PostIndex extends React.Component {
                         postId={post.id}
                         body={post.body}
                         postAuthorId={post.postAuthorId}
-                        currentUserId={this.props.currentUser.id}
+                        currentUserId={currentUser.id}
                         fname={post.author.fname}
                         lname={post.author.lname}
                         date={this.formatDate(post.createdAt)}

@@ -157,7 +157,7 @@ class SignupModal extends React.Component {
         return (
             <div>
                 {this.props.modal && signupForm()}
-                <button className="signup-button" onClick={() => this.props.showModal()}>Create New Account</button>
+                <button className="signup-button" onClick={() => this.props.showModal('signup')}>Create New Account</button>
             </div>
         )
     }

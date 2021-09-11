@@ -14,17 +14,25 @@ export const createPost = post => (
     $.ajax({
         url: 'api/posts',
         method: 'POST',
-        data: { post }
+        data: post,
+        processData: false,
+        contentType: false
     })
 )
 
-export const updatePost = post => (
-    $.ajax({
-        url: `/api/posts/${post.id}`,
-        method: 'PATCH',
-        data: { post }
-    })
-)
+export const updatePost = post => {
+    const postId = post.get('post[id]'); // getting the key value of the formData object from the front end in handleSubmit of PostForm
+    
+    return (
+        $.ajax({
+            url: `/api/posts/${postId}`,
+            method: 'PATCH',
+            data: post,
+            processData: false,
+            contentType: false
+        })
+    )
+}
 
 export const deletePost = postId => (
     $.ajax({

@@ -1,16 +1,10 @@
 import { connect } from "react-redux"
 
 import DeletePost from './delete_post';
-import { deletePost, fetchPost } from "../../actions/post_actions";
-
-// const mSTP = ({ entities: { users, posts }, session }, ownProps) => ({
-//     currentUser: users[session.id],
-//     postAuthorId: posts[ownProps.postId].postAuthorId
-// })
+import { deletePost } from "../../actions/post_actions";
 
 const mDTP = dispatch => ({
-    deletePost: postId => dispatch(deletePost(postId)),
-    // fetchPost: postId => dispatch(fetchPost(postId))
+    deletePost: postId => dispatch(deletePost(postId))
 })
 
 export default connect(null, mDTP)(DeletePost);

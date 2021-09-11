@@ -1,5 +1,7 @@
 import React from 'react'
 
+import PostDropdownMenu from './post_dropdown_menu';
+
 export class PostModifyIcon extends React.Component {
     constructor(props) {
         super(props);
@@ -26,7 +28,7 @@ export class PostModifyIcon extends React.Component {
         return (
             <div>
                 {modifyIcon()}
-                { this.state.open && this.props.children } {/* change back to this.state.open after testing is finished */}
+                {this.state.open && <PostDropdownMenu postId={this.props.postId} /> }
             </div>
         )
     }

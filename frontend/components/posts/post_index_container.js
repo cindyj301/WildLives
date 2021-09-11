@@ -19,7 +19,7 @@ const mDTP = dispatch => ({
     createPost: post => dispatch(createPost(post)),
     updatePost: post => dispatch(updatePost(post)),
     deletePost: postId => dispatch(deletePost(postId)),
-    receiveCurrentUser: user => dispatch(receiveCurrentUser(user))
+    // receiveCurrentUser: user => dispatch(receiveCurrentUser(user))
 })
 
 export default connect(mSTP, mDTP)(PostIndex);
