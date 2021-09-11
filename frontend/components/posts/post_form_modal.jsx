@@ -38,7 +38,7 @@ class PostFormModal extends React.Component {
                                     className="modal-close post-form"
                                     src={close}
                                     onClick={() => this.props.hideModal()}
-                                    />
+                                />
                             </div>
                             <div className="post-form-profile-icon-container">
                                 <div className="profile-icon-container post-form">

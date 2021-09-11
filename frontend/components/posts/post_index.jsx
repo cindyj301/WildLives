@@ -28,9 +28,6 @@ class PostIndex extends React.Component {
     }
 
     render() {
-        // console.log(this.props.currentUser)
-        // if (!this.props.currentUser) return null;
-
         const { posts } = this.props;
 
         return (

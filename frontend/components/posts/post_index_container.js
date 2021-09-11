@@ -6,7 +6,6 @@ import { receiveCurrentUser } from '../../actions/session_actions';
 import { allPosts } from '../../util/format_util';
 
 const mSTP = state => {
-    // debugger
     return {
         posts: allPosts(state.entities),
         errors: state.errors.post,

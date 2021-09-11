@@ -51,11 +51,7 @@ export const updatePost = post => ( // note: verify it works
     dispatch => (
         PostAPIUtil.updatePost(post)
             .then(post => (
-                dispatch(updatePost(post))
-            ), error => (
-                dispatch(receivePostErrors(error.responseJSON))
-            ))
-                
+                dispatch(updatePost(post))))       
     )
 )
 
