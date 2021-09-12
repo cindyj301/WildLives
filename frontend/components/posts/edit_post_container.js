@@ -38,8 +38,7 @@ const mSTP = ({ entities: { users, posts }, session }, ownProps) => {
 const mDTP = dispatch => ({
     hideModal: () => dispatch(hideModal()),
     showModal: () => dispatch(showModal('edit')),
-    processForm: (post, id) => dispatch(updatePost(post, id)),
-    fetchPost: postId => dispatch(fetchPost(postId))
+    processForm: (post, id) => dispatch(updatePost(post, id))
 })
 
 export default connect(mSTP, mDTP)(EditPostForm);

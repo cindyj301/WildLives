@@ -16,7 +16,7 @@ export const createPost = post => {
             url: 'api/posts',
             method: 'POST',
             data: post,
-            processData: false,
+            processData: false, // these two keys are needed for requests with formData: let ajax know not to mess with post object format for rails BE (to prevent default jQuery behavior from trying to convert our FormData object and sending up the wrong header)
             contentType: false
         })
     )

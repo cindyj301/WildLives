@@ -3,7 +3,6 @@ import * as PostAPIUtil from '../util/post_util';
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const REMOVE_POST = 'REMOVE_POST';
-export const RECEIVE_POST_ERRORS = 'RECEIVE_POST_ERRORS';
 
 const receivePost = post => ({
     type: RECEIVE_POST,
@@ -18,11 +17,6 @@ const receivePosts = posts => ({
 const removePost = postId => ({
     type: REMOVE_POST,
     postId
-})
-
-const receivePostErrors = errors => ({
-    type: RECEIVE_POST_ERRORS,
-    errors
 })
 
 export const fetchPosts = () => (
@@ -42,16 +36,14 @@ export const fetchPost = postId => (
 export const createPost = post => (
     dispatch => (
         PostAPIUtil.createPost(post)
-            .then(post => (
-                dispatch(receivePost(post)))) // no errors appear on fb for creating a post
+            .then(post => (dispatch(receivePost(post))))
     )
 )
 
 export const updatePost = (post, id) => (
     dispatch => (
         PostAPIUtil.updatePost(post, id)
-            .then(post => (
-                dispatch(receivePost(post))))       
+            .then(post => (dispatch(receivePost(post))))       
     )
 )
 

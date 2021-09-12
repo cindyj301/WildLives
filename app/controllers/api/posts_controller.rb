@@ -16,8 +16,6 @@ class Api::PostsController < ApplicationController
 
         if @post.save
             render :show
-        else
-            render json: @post.errors.full_messages, status: 422
         end
     end
     
@@ -40,6 +38,6 @@ class Api::PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:body)
+        params.require(:post).permit(:body, :photo)
     end
 end

@@ -2,7 +2,6 @@ import React from 'react'
 
 // component imports
 import PostModifyIcon from './post_modify_icon';
-// import PostDropdownMenu from './post_dropdown_menu';
 
 // util imports
 import { capitalize } from '../../util/format_util';
