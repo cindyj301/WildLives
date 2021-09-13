@@ -1,11 +1,11 @@
 class Api::UsersController < ApplicationController
-    def index # note: edit for User.includes(:posts)
-        @users = User.all
+    def index
+        @users = User.all.includes(:posts)
         render :index
     end
 
-    def show # note: edit for User.includes(:posts)
-        @user = User.find_by(id: params[:id])
+    def show
+        @user = User.includes(:posts).find_by(id: params[:id])
         render :show
     end
 
@@ -20,8 +20,8 @@ class Api::UsersController < ApplicationController
         end
     end
 
-    def update # note: edit for User.includes(:posts)
-        @user = User.find_by(id: params[:id])
+    def update
+        @user = User.includes(:posts).find_by(id: params[:id])
         if @user && @user.update(user_params)
             render :show
         else

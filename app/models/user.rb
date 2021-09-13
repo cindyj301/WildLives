@@ -11,7 +11,15 @@ class User < ApplicationRecord
 
     has_many :posts,
         foreign_key: :post_author_id,
-        class_name: "Post"
+        class_name: "Post",
+        dependent: :destroy
+
+    has_many :comments,
+        foreign_key: :comment_author_id,
+        class_name: "Comment",
+        dependent: :destroy
+
+    has_one_attached :profile_pic
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
