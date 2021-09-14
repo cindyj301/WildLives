@@ -7,48 +7,49 @@ class CommentIndexItem extends React.Component {
         super(props);
         this.state = {
             open: false,
-            isEditable: {
-                status: false,
-                commentId: '',
-                currentComment: this.props.comment.body
-            }
-        };
+            isEditable: false,
+            body: this.props.comment.body
+        }
 
         this.handleClick = this.handleClick.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleKeyPress = this.handleKeyPress.bind(this);
     }
 
-    handleClick(e) {
-        e.preventDefault();
+    handleClick() {
         this.setState({ open: !this.state.open })
     }
 
-    handleDelete(e) {
-        e.preventDefault();
+    handleDelete() {
         this.props.deleteComment(this.props.comment.id)
             .then(this.setState({ open: !this.state.open }));
     }
 
-    handleEdit(e, id) {
-        e.preventDefault();
-        this.setState({
-            isEditable: {
-                status: true,
-                id
-            }
-        })
-        // this.props.updateComment(this.props.comment)
-        //     .then(this.setState({ open: !this.state.open, comment: this.state.comment }))
+    handleEdit() {
+        this.setState({ isEditable: !this.isEditable, open: !this.state.open })
     }
 
     handleChange(e) {
-        // debugger
-        this.setState({ isEditable: { ...this.state.isEditable, 
-            currentComment: e.currentTarget.value
-        }})
-        // debugger
+        this.setState({ body: e.currentTarget.value });
+    }
+
+    handleKeyPress(e) {
+        return e.code === 'Enter' ? this.handleSubmit(e) : null;
+    }
+
+    handleSubmit() {
+        this.setState({
+            body: this.state.body,
+            open: false,
+            isEditable: false
+        });
+        
+        const formData = new FormData();
+        formData.append('comment[body]', this.state.body);
+        formData.append('comment[id]', this.props.comment.id);
+        this.props.updateComment(formData);
     }
 
     render() {
@@ -66,7 +67,7 @@ class CommentIndexItem extends React.Component {
         const commentDropdownOptions = () => {
             return (
                 <ul className="comment-dropdown">
-                    <li onClick={(e) => this.handleEdit(e, this.props.comment.id)} className="comment-dropdown-item">Edit</li>
+                    <li onClick={this.handleEdit} className="comment-dropdown-item">Edit</li>
                     <li onClick={this.handleDelete} className="comment-dropdown-item">Delete</li>
                 </ul>
             )
@@ -84,15 +85,16 @@ class CommentIndexItem extends React.Component {
                 <div className="sub-comment-body-container">
                     <div className="comment-body">
                         <span className="name comment">{capitalize(this.props.commenter.fname) + " " + capitalize(this.props.commenter.lname)}</span>
-                        {(this.state.isEditable.status) ? 
+                        { (this.state.isEditable) ? 
                             <input
-                                onChange={this.handleChange}
                                 type="text"
-                                value={this.state.isEditable.currentComment}
+                                value={this.state.body}
+                                onChange={this.handleChange}
+                                onKeyPress={this.handleKeyPress}
                             />
                             : <div className="comment-body-text">
-                                {this.props.comment.body}
-                            </div>}
+                                {this.state.body}
+                            </div> }
                     </div>
                     <span className="date comment">{formatDate(this.props.comment.createdAt)}</span>
                 </div>

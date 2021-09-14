@@ -18,7 +18,6 @@ class CommentIndex extends React.Component {
     }
 
     handleChange(e) {
-        e.preventDefault();
         this.setState({ body: e.currentTarget.value })
     } 
 
@@ -48,7 +47,6 @@ class CommentIndex extends React.Component {
                     commenter={comment.commenter}
                     commenterId={comment.commentAuthorId}
                     currentUserId={this.props.currentUser.id}
-                    handleKeyPress={this.handleKeyPress}
                 />
             )))
         }

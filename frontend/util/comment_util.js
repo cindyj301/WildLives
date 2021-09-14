@@ -22,9 +22,11 @@ export const createComment = comment => {
 
 export const updateComment = comment => (
     $.ajax({
-        url: `/api/comments/${comment.id}`,
+        url: `/api/comments/${comment.get('comment[id]')}`,
         method: 'PATCH',
-        data: { comment }
+        data: comment,
+        processData: false,
+        contentType: false
     })
 )
 
