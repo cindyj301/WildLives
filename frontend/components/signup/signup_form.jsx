@@ -18,7 +18,6 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.signup(this.state)
-            .then(this.props.hideModal)
             .then(this.props.clearErrors())
             .then(() => this.setState({
                 fname: '',
