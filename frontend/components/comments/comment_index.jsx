@@ -48,6 +48,7 @@ class CommentIndex extends React.Component {
                     commenter={comment.commenter}
                     commenterId={comment.commentAuthorId}
                     currentUserId={this.props.currentUser.id}
+                    handleKeyPress={this.handleKeyPress}
                 />
             )))
         }

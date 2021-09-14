@@ -5,11 +5,19 @@ import { capitalize, formatDate } from '../../util/format_util';
 class CommentIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { open: false };
+        this.state = {
+            open: false,
+            isEditable: {
+                status: false,
+                commentId: '',
+                currentComment: this.props.comment.body
+            }
+        };
 
         this.handleClick = this.handleClick.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleClick(e) {
@@ -23,10 +31,25 @@ class CommentIndexItem extends React.Component {
             .then(this.setState({ open: !this.state.open }));
     }
 
-    handleEdit(e) {
+    handleEdit(e, id) {
         e.preventDefault();
-        this.props.updateComment(this.props.comment)
-            .then(this.setState({ open: !this.state.open }))
+        this.setState({
+            isEditable: {
+                status: true,
+                id
+            }
+        })
+        // this.props.updateComment(this.props.comment)
+        //     .then(this.setState({ open: !this.state.open, comment: this.state.comment }))
+    }
+
+    handleChange(e) {
+        e.preventDefault();
+        // debugger
+        this.setState({ isEditable: {
+            currentComment: e.currentTarget.value
+        }})
+        // debugger
     }
 
     render() {
@@ -44,7 +67,7 @@ class CommentIndexItem extends React.Component {
         const commentDropdownOptions = () => {
             return (
                 <ul className="comment-dropdown">
-                    <li onClick={this.handleEdit} className="comment-dropdown-item">Edit</li>
+                    <li onClick={(e) => this.handleEdit(e, this.props.comment.id)} className="comment-dropdown-item">Edit</li>
                     <li onClick={this.handleDelete} className="comment-dropdown-item">Delete</li>
                 </ul>
             )
@@ -62,7 +85,15 @@ class CommentIndexItem extends React.Component {
                 <div className="sub-comment-body-container">
                     <div className="comment-body">
                         <span className="name comment">{capitalize(this.props.commenter.fname) + " " + capitalize(this.props.commenter.lname)}</span>
-                        <div className="comment-body-text">{this.props.comment.body}</div>
+                        {(this.state.isEditable.status) ? 
+                            <input
+                                onChange={this.handleChange}
+                                type="text"
+                                value={this.state.isEditable.currentComment}
+                            />
+                            : <div className="comment-body-text">
+                                {this.props.comment.body}
+                            </div>}
                     </div>
                     <span className="date comment">{formatDate(this.props.comment.createdAt)}</span>
                 </div>

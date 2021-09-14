@@ -5,7 +5,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 // for testing: remove later
-import { fetchComments, fetchComment } from './actions/comment_actions';
+import { fetchUsers, fetchUser } from './actions/user_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // for testing: remove later
     window.dispatch = store.dispatch;
     window.getState = store.getState;
-    window.fetchComments = fetchComments
-    window.fetchComment = fetchComment
+    window.fetchUsers = fetchUsers
+    window.fetchUser = fetchUser
 
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
