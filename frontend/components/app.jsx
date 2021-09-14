@@ -9,6 +9,7 @@ const App = () => (
     <div>
         <Switch>
             <ProtectedRoute path='/feed' component={NewsFeedContainer} />
+            {/* <ProtectedRoute path='users' */}
             <AuthRoute exact path='/' component={LoginFormContainer} />
         </Switch>
     </div>

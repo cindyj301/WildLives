@@ -22,24 +22,33 @@ const receiveUserErrors = errors => ({
 export const fetchUsers = () => (
     dispatch => (
         UserAPIUtil.fetchUsers()
-            .then(users => dispatch(receiveUsers(users)),
-            error => dispatch(receiveUserErrors(error.responseJSON)))
+            .then(users => (
+                dispatch(receiveUsers(users))
+            ), error => (
+                dispatch(receiveUserErrors(error.responseJSON))
+            ))
     )
 )
 
 export const fetchUser = userId => (
     dispatch => (
         UserAPIUtil.fetchUser(userId)
-            .then(user => dispatch(receiveUser(user)),
-                error => dispatch(receiveUserErrors(error.responseJSON)))
+            .then(user => (
+                dispatch(receiveUser(user))
+            ), error => (
+                dispatch(receiveUserErrors(error.responseJSON))
+            ))
     )
 )
 
 export const updateUser = user => (
     dispatch => (
         UserAPIUtil.updateUser(user)
-            .then(user => dispatch(receiveUser(user)),
-                error => dispatch(receiveUserErrors(error.responseJSON)))
+            .then(user => (
+                dispatch(receiveUser(user))
+            ), error => (
+                dispatch(receiveUserErrors(error.responseJSON))
+            ))
     )
 )
 
