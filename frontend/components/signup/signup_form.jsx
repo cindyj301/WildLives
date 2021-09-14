@@ -35,14 +35,12 @@ class SignupForm extends React.Component {
 
     renderErrors() {
         const { errors } = this.props;
-        return (
-            <ul>
-                {errors.map((error, idx) => (
-                    <li key={`error-${idx}`} className="signup-errors">
-                        {error}
-                    </li>
-                ))}
-            </ul>
+        return (    
+            errors.map((error, idx) => (
+                <li key={`error-${idx}`} className="signup-errors">
+                    {error}
+                </li>
+            ))
         );
     }
 
@@ -62,9 +60,10 @@ class SignupForm extends React.Component {
                         onClick={() => this.props.hideModal()}
                     />
                 </div>
-            
-                <form className="modal-form signup-form" onSubmit={this.handleSubmit}>
+                <ul className="signup-errors-container">
                     {this.renderErrors()}
+                </ul>
+                <form className="modal-form signup-form" onSubmit={this.handleSubmit}>
                     <div className="name-input-container">
                         <input
                             className="signup-input"

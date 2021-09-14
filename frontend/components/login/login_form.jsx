@@ -26,13 +26,11 @@ class LoginForm extends React.Component {
     renderErrors() {
         const { errors } = this.props;
         return (
-            <ul>
-                {errors.map((error, idx) => (
-                    <li key={`error-${idx}`} className="login-errors">
-                        {error}
-                    </li>
-                ))}
-            </ul>
+            errors.map((error, idx) => (
+                <li key={`error-${idx}`} className="login-errors">
+                    {error}
+                </li>
+            ))
         );
     }
 
@@ -55,7 +53,9 @@ class LoginForm extends React.Component {
                 {splashText()}
                 <div className="form-container">
                     <form className="login-form" onSubmit={this.handleSubmit}>
-                        {this.renderErrors()}
+                        <ul className="login-errors-container">
+                            {this.renderErrors()}
+                        </ul>
                         <input
                             className="form-input"
                             type="email"

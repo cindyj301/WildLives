@@ -1,4 +1,5 @@
 import { RECEIVE_CURRENT_USER } from '../../actions/session_actions';
+
 import {
     RECEIVE_USER,
     RECEIVE_USERS

@@ -8,7 +8,6 @@ import { SHOW_MODAL } from '../../actions/modal_actions';
 
 const loginErrorsReducer = (state = [], action) => {
     Object.freeze(state);
-
     switch(action.type) {
         case RECEIVE_LOGIN_ERRORS:
             return action.errors;

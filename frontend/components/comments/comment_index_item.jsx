@@ -44,9 +44,8 @@ class CommentIndexItem extends React.Component {
     }
 
     handleChange(e) {
-        e.preventDefault();
         // debugger
-        this.setState({ isEditable: {
+        this.setState({ isEditable: { ...this.state.isEditable, 
             currentComment: e.currentTarget.value
         }})
         // debugger
