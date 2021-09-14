@@ -4,6 +4,7 @@ import Profile from './profile';
 import { fetchUsers } from '../../actions/user_actions';
 import { fetchPosts, createPost, deletePost, updatePost } from "../../actions/post_actions";
 import { createComment, deleteComment, updateComment } from "../../actions/comment_actions";
+import { showModal, hideModal } from "../../actions/modal_actions";
 
 const mSTP = ({ entities: { users }, session }, ownProps) => ({
     user: users[ownProps.match.params.userId],
@@ -19,7 +20,9 @@ const mDTP = dispatch => ({
     deletePost: postId => dispatch(deletePost(postId)),
     createComment: comment => dispatch(createComment(comment)),
     updateComment: comment => dispatch(updateComment(comment)),
-    deleteComment: commentId => dispatch(deleteComment(commentId))
+    deleteComment: commentId => dispatch(deleteComment(commentId)),
+    hideModal: () => dispatch(hideModal()),
+    showModal: () => dispatch(showModal('create'))
 })
 
 export default connect(mSTP, mDTP)(Profile);

@@ -56,6 +56,13 @@
     outline: none;
 }
 
+/* edit comment input  */
+.edit.comment-input {
+    font-size: 16px;
+    padding: 0px;
+    margin: 0px;
+}
+
 /* comment area */
 .comment-item-profile-container {
     /* background-color: burlywood; */

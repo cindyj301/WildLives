@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import NavigationItem from './navigation_item'
 import { capitalize } from '../../util/format_util'
@@ -34,7 +35,9 @@ const Navigation = ({ currentUser }) => {
     return (
         <ul className="navigation-container">
             <div className="left-nav-item-container">
-                <NavigationItem icon={profileIcon()} />
+                <Link to={`users/${currentUser.id}`} className="profile-link">
+                    <NavigationItem icon={profileIcon()} />
+                </Link>
                 <NavigationItem icon={friendsIcon()} />
             </div>
         </ul>

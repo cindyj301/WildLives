@@ -10,9 +10,27 @@
     margin-left: 10px;
 }
 
+/* .home-icon-container {
+    padding-bottom: 5px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.home-icon-container a:visited {
+    border-bottom: 3px solid rgb(111, 78, 55);
+} */
+
 .home-icon {
-    width: 32px;
-    height: 28px;
+    width: 55px;
+    height: 40px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 7px;
+}
+
+.home-icon:hover {
+    background-color: #e4e4e4;   
 }
 
 .profile-icon-container {
@@ -23,6 +41,7 @@
     padding: 0px 10px;
     margin-right: 0px;
     height: 40px;
+    gap: 3px;
 }
 
 .profile-icon-container.hover:hover {
@@ -35,6 +54,11 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
+}
+
+.profile-link {
+    text-decoration: none;
+    color: black;
 }
 
 .icon-button {

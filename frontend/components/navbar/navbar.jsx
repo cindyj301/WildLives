@@ -33,10 +33,16 @@ const NavBar = ({ currentUser }) => {
         <Link to="/feed">
           <img className="sloth-logo hover" src={slothLogo} alt="sloth" />
         </Link>
-        <img src={homeLogo} alt="home-icon" className="home-icon hover" />
+        <div className="home-icon-container">
+          <Link to="/feed">
+          <img src={homeLogo} alt="home-icon" className="home-icon hover" />
+          </Link>
+        </div>
       </div>
       <ul className="navbar-nav">
-        {profileIcon()}
+        <Link to={`/users/${currentUser.id}`} className="profile-link">
+          {profileIcon()}
+        </Link>
         <NavBarItem icon={accountIcon()}>
           <DropdownMenu />
         </NavBarItem>

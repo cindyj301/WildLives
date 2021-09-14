@@ -84,16 +84,20 @@ class CommentIndexItem extends React.Component {
                 </div>
                 <div className="sub-comment-body-container">
                     <div className="comment-body">
-                        <span className="name comment">{capitalize(this.props.commenter.fname) + " " + capitalize(this.props.commenter.lname)}</span>
                         { (this.state.isEditable) ? 
                             <input
-                                type="text"
-                                value={this.state.body}
-                                onChange={this.handleChange}
-                                onKeyPress={this.handleKeyPress}
+                            type="text"
+                            className='comment-input edit'
+                            value={this.state.body}
+                            onChange={this.handleChange}
+                            onKeyPress={this.handleKeyPress}
                             />
-                            : <div className="comment-body-text">
-                                {this.state.body}
+                            : 
+                            <div>
+                                <span className="name comment">{capitalize(this.props.commenter.fname) + " " + capitalize(this.props.commenter.lname)}</span>
+                                <div className="comment-body-text">
+                                    {this.state.body}
+                                </div> 
                             </div> }
                     </div>
                     <span className="date comment">{formatDate(this.props.comment.createdAt)}</span>

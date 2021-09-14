@@ -1,0 +1,63 @@
+.profile-page-container {
+    display: flex;
+    /* justify-content: center; */
+    /* justify-self: center; */
+    gap: 20px;
+    margin: 20px 250px 0px 250px;
+    /* background-color: lavenderblush; */
+    /* width: 70%; */
+}
+
+/* .profile-header-container { */
+    /* height: 510px; */
+    /* background-color: red; */
+/* } */
+
+.profile-sidebar-container {
+    /* grid-area: sidebar;
+    justify-self: center; */
+    /* background-color: blue; */
+    width: 100%;
+    min-width: 400px;
+}
+
+.news-feed-post-container.profile {
+    /* grid-area: posts;
+    justify-self: center; */
+    /* background-color: green; */
+    width: 100%;
+    min-width: 500px;
+}
+
+/* .news-feed-container {
+    background-color: #f0f2f5;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    justify-content: center;
+    gap: 20px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "leftbar main rightbar"
+}
+
+.navigation-container {
+    grid-area: leftbar;
+    overflow: hidden;
+    position: fixed;
+    height: 100vh;
+    width: 25%;
+}
+
+.news-feed-post-container {
+    grid-area: main;
+    overflow: auto;
+}
+
+.contacts-container {
+    grid-area: rightbar;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    width: 25%;
+} */

@@ -2,6 +2,10 @@ export const capitalize = name => name.slice(0, 1).toUpperCase() + name.slice(1)
 
 export const allPosts = ({ posts }) => Object.keys(posts).map(id => posts[id]).reverse();
 
+export const userPosts = ({ posts }, currentUser) => Object.keys(posts).map(id => posts[id])
+    .reverse()
+    .filter(post => post.postAuthorId === currentUser.id );
+
 export const allComments = ({ comments }) => Object.keys(comments).map(id => comments[id]);
 
 export const formatDate = createdAt => {
