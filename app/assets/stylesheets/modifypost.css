@@ -29,13 +29,25 @@
   position: absolute;
   border: solid transparent;
   border-bottom-color: white;
-  /* border-bottom-color: teal; */
   border-width: 11px;
   margin-left: -10px;
   top: -20px; /* move arrow up and down < = down */ 
   right: 8px; /* translate arrow along top of dropdown > = left ) */
   z-index: 1;
 } 
+
+.post-dropdown::after {
+    content: "";
+    position: absolute;
+    right: 8px;
+    top: -21px;
+    width: 0;
+    height: 0;
+    border: solid transparent;
+    border-bottom: 12px solid rgba(116, 116, 116, 0.03);
+    border-width: 10px;
+    z-index: 0;
+}
 
 /* dropdown menu item */
 .post-menu-item {
@@ -57,8 +69,3 @@
     font-size: 14px;
     font-weight: 525;
 }
-
-/* edit post form modal */
-/* .modal-header-text.edit-form {
-
-} */

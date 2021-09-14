@@ -2,12 +2,12 @@ class Api::PostsController < ApplicationController
     before_action :ensure_logged_in!
     
     def index
-        @posts = Post.all.includes(:comments).order('created_at DESC')
+        @posts = Post.all.order('created_at DESC')
         render :index
     end
 
     def show
-        @post = Post.includes(:comments).find_by(id: params[:id])
+        @post = Post.find_by(id: params[:id])
         render :show
     end
 

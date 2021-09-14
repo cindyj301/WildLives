@@ -20,7 +20,7 @@ demo_user = User.create!(
     status: "Critically Endangered"
 )
 
-# file = open('https://wild-lives-seeds.s3.us-east-2.amazonaws.com/sloth_pic.jpeg')
+# file = URI.open('https://wild-lives-seeds.s3.us-east-2.amazonaws.com/sloth_pic.jpeg')
 # demo_user.profile_pic.attach(io: file, filename: 'sloth_pic_jpeg')
 
 user1 = User.create!(

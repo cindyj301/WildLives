@@ -2,11 +2,12 @@ import React from 'react'
 
 // component imports
 import PostModifyIcon from './post_modify_icon';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 // util imports
 import { capitalize } from '../../util/format_util';
 
-const PostIndexItem = ({ body, fname, lname, date, postId, postAuthorId, currentUserId }) => {
+const PostIndexItem = ({ body, fname, lname, date, postId, postAuthorId, currentUserId, post, comments }) => {
     const modifyIcon = () => (
         <img
             src={modifyPost}
@@ -17,10 +18,16 @@ const PostIndexItem = ({ body, fname, lname, date, postId, postAuthorId, current
 
     const modifyPostOptions = () => {
         return (postAuthorId === currentUserId) ? (
-            <PostModifyIcon icon={modifyIcon()} postId={postId}>
-                
-            </PostModifyIcon>
+            <PostModifyIcon icon={modifyIcon()} postId={postId} />
         ) : null; 
+    }
+
+    const postPhoto = () => {
+        return (post.photoUrl) ? (
+            <div className="post-photo">
+                <img src={post.photoUrl} alt="post-photo" />
+            </div>
+        ) : null;
     }
 
     return (
@@ -42,25 +49,11 @@ const PostIndexItem = ({ body, fname, lname, date, postId, postAuthorId, current
             <div className="post-body">
                 {body}
             </div>
-            <div className="comment-container">
-                <div className="comment-background-area">
-                    <img src={comment} alt="comment" className="comment-icon" />
-                    <span className="comment-text">Comment</span>
-                </div>
-            </div>
-            <div className="comment-input-container">
-                <img
-                    className="profile-icon post-item comment-input-img"
-                    src="https://scontent.fhou1-1.fna.fbcdn.net/v/t1.30497-1/cp0/p80x80/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&amp;ccb=1-5&amp;_nc_sid=7206a8&amp;_nc_ohc=T_q5miqWSkYAX_JRnzV&amp;_nc_ht=scontent.fhou1-1.fna&amp;oh=4ffecdaf87316f82d0d86f5fcbc40618&amp;oe=615AAEF6"
-                    alt='profile-icon'
-                />
-                {/* refactor to comment component ?? (change this component to class then */}
-                <input
-                    type="text"
-                    className="comment-input"
-                    placeholder="Write a comment..."
-                />
-            </div>
+            {postPhoto()}
+            <CommentIndexContainer
+                comments={comments}
+                postId={postId}
+            />
         </div>
     )
 }

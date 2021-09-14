@@ -1,11 +1,11 @@
 class Api::UsersController < ApplicationController
     def index
-        @users = User.all.includes(:posts)
+        @users = User.all
         render :index
     end
 
     def show
-        @user = User.includes(:posts).find_by(id: params[:id])
+        @user = User.find_by(id: params[:id])
         render :show
     end
 
@@ -21,7 +21,7 @@ class Api::UsersController < ApplicationController
     end
 
     def update
-        @user = User.includes(:posts).find_by(id: params[:id])
+        @user = User.find_by(id: params[:id])
         if @user && @user.update(user_params)
             render :show
         else
@@ -32,6 +32,6 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:email, :password, :fname, :lname, :animal, :status)
+        params.require(:user).permit(:email, :password, :fname, :lname, :animal, :status, :profile_pic)
     end
 end

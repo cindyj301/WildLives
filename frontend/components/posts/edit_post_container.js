@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 
 import PostForm from "./post_form";
 import { hideModal, showModal } from '../../actions/modal_actions';
-import { updatePost, fetchPost } from '../../actions/post_actions';
+import { updatePost } from '../../actions/post_actions';
 
 class EditPostForm extends React.Component {
     render() {
