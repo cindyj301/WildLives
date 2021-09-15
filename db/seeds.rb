@@ -24,8 +24,8 @@ demo_user = User.create!(
 # demo_user.profile_pic.attach(io: file, filename: 'sloth_pic_jpeg')
 
 user1 = User.create!(
-    fname: "Monk",
-    lname: "Key",
+    fname: "Ollie",
+    lname: "Orangutan",
     email: "bananas@yahoo.com",
     password: 'bananas4bananas',
     animal: "Bornean orangutan",
@@ -45,9 +45,72 @@ user3 = User.create!(
     fname: 'Emilio',
     lname: 'Elephant',
     email: 'peanuts@email.com',
-    password: 'elephants123',
+    password: 'password',
     animal: 'African forest elephant',
     status: 'Critically Endangered'
+)
+
+user4 = User.create!(
+    fname: 'Polly',
+    lname: 'Penguin',
+    email: Faker::Internet.email,
+    password: 'password',
+    animal: 'Southern Rockhopper Penguin',
+    status: 'Vulnerable'
+)
+
+user5 = User.create!(
+    fname: 'Peter',
+    lname: 'Panda',
+    email: Faker::Internet.email,
+    password: 'password',
+    animal: 'Red Panda',
+    status: 'Endangered'
+)
+
+user6 = User.create!(
+    fname: 'Lenny',
+    lname: 'Leopard',
+    email: Faker::Internet.email,
+    password: 'password',
+    animal: 'Snow Leopard',
+    status: 'Vulnerable'
+)
+
+user7 = User.create!(
+    fname: 'Penelope',
+    lname: 'Porpoise',
+    email: Faker::Internet.email,
+    password: 'password',
+    animal: 'Yangtze Finless Porpoise',
+    status: 'Critically Endangered'
+)
+
+user8 = User.create!(
+    fname: 'Fiona',
+    lname: 'Ferret',
+    email: Faker::Internet.email,
+    password: 'password',
+    animal: 'Black-footed Ferret',
+    status: 'Endangered'
+)
+
+user9 = User.create!(
+    fname: 'Camille',
+    lname: 'Cat',
+    email: Faker::Internet.email,
+    password: 'password',
+    animal: 'Rusty-spotted Cat',
+    status: 'Vulnerable'
+)
+
+user10 = User.create!(
+    fname: 'Waldo',
+    lname: 'Whale',
+    email: Faker::Internet.email,
+    password: 'password',
+    animal: 'Blue Whale',
+    status: 'Endangered'
 )
 
 post1 = Post.create!(
@@ -70,6 +133,36 @@ post4 = Post.create!(
     post_author_id: user3.id
 )
 
+post5 = Post.create!(
+    body: "Can't wait to go climbing later!",
+    post_author_id: user6.id
+)
+
+post6 = Post.create!(
+    body: 'Eating some plankton.',
+    post_author_id: user4.id
+)
+
+post7 = Post.create!(
+    body: 'Miss my Baiji dolphin friends :(',
+    post_author_id: user7.id
+)
+
+post8 = Post.create!(
+    body: "Swimmin' solo.",
+    post_author_id: user10.id
+)
+
+post9 = Post.create!(
+    body: 'Playing Solitare.',
+    post_author_id: user8.id
+)
+
+post10 = Post.create!(
+    body: 'Staying up late tonight.',
+    post_author_id: user9.id
+)
+
 comment1 = Comment.create!(
     body: "I'll swing by!",
     post_id: post2.id,
@@ -89,7 +182,25 @@ comment3 = Comment.create!(
 )
 
 comment4 = Comment.create!(
-    body: "I'll stick to my algae, thanks.",
-    post_id: post1.id,
-    comment_author_id: user2.id
+    body: "I'm down to join!",
+    post_id: post5.id,
+    comment_author_id: user5.id
+)
+
+comment5 = Comment.create!(
+    body: "Swimming with my herd. Want to join?",
+    post_id: post8.id,
+    comment_author_id: user3.id
+)
+
+comment6 = Comment.create!(
+    body: "I prefer twigs.",
+    post_id: post6.id,
+    comment_author_id: demo_user.id
+)
+
+comment7 = Comment.create!(
+    body: "I got a cool colony.",
+    post_id: post4.id,
+    comment_author_id: user4.id
 )

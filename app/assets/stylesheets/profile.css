@@ -3,21 +3,22 @@
     /* justify-content: center; */
     /* justify-self: center; */
     gap: 20px;
+    flex-wrap: wrap;
     margin: 20px 250px 0px 250px;
     /* background-color: lavenderblush; */
     /* width: 70%; */
 }
 
-/* .profile-header-container { */
-    /* height: 510px; */
-    /* background-color: red; */
-/* } */
+.profile-header-container {
+    height: 510px;
+    background-color: red;
+}
 
 .profile-sidebar-container {
     /* grid-area: sidebar;
     justify-self: center; */
-    /* background-color: blue; */
-    width: 100%;
+    background-color: blue;
+    margin-top: 20px;
     min-width: 400px;
 }
 
@@ -25,7 +26,7 @@
     /* grid-area: posts;
     justify-self: center; */
     /* background-color: green; */
-    width: 100%;
+    /* width: 100%; */
     min-width: 500px;
 }
 

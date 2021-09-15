@@ -54,6 +54,7 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
+    border: 0.5px solid rgba(170, 169, 169, 0.808);
 }
 
 .profile-link {

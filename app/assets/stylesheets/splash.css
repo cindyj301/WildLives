@@ -1,8 +1,10 @@
 .splash-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     position: fixed;
+    gap: 20px;
     top: 300px;
     left: 50%;
     transform: translate(-50%, -50%);

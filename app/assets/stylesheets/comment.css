@@ -41,6 +41,7 @@
 .profile-icon.post-item.comment-input-img {
     width: 30px;
     height: 30px;
+    border: 0.5px solid rgba(170, 169, 169, 0.808);
 }
 
 .comment-input {
