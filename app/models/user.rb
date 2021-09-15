@@ -11,17 +11,31 @@ class User < ApplicationRecord
 
     has_many :posts,
         foreign_key: :post_author_id,
-        class_name: "Post",
+        class_name: :Post,
         dependent: :destroy
 
     has_many :comments,
         foreign_key: :comment_author_id,
-        class_name: "Comment",
+        class_name: :Comment,
         dependent: :destroy
 
     has_one_attached :profile_pic
     
     has_one_attached :cover_photo
+
+    has_many :requesters,
+        foreign_key: :requester_id,
+        class_name: :Friend,
+        dependent: :destroy
+    
+    has_many :requestees,
+        foreign_key: :requestee_id,
+        class_name: :Friend,
+        dependent: :destroy
+
+    def friendships
+        requesters.or(requestees)
+    end
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)

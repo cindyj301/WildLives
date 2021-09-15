@@ -33,4 +33,3 @@ export const updateUser = user => (
             .then(user => dispatch(receiveUser(user)))
     )
 )
-

@@ -5,6 +5,7 @@ export default class ProfileSideBar extends Component {
         return (
             <div className="profile-sidebar-container">
                 sidebar
+                <button onClick={this.handleClick}>Add Friend</button>
             </div>
         )
     }

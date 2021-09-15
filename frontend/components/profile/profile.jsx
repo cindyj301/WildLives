@@ -20,7 +20,7 @@ class Profile extends React.Component {
         return (
             <div>
                 <NavBarContainer />
-                <ProfileHeader />
+                <ProfileHeader currentUser={currentUser} />
                 <div className="profile-page-container">
                     <ProfileSideBar />
                     <ProfilePostIndex
