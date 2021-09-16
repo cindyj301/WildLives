@@ -19,6 +19,7 @@
     height: 350px;
 }
 
+/* cover photo */
 .cover-photo-container {
     background-color: #f0f2f5;
     background-image:
@@ -31,6 +32,7 @@
     border-bottom-right-radius: 10px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0px 15px 10px -15px rgba(212, 214, 216, 0.801);
 }
 
 .cover-photo-upload-label-container {
@@ -70,6 +72,95 @@
 
 .cover-photo-img {
     width: 100%;
+}
+
+/* cover photo modal */
+.cover-photo.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.cover-photo.modal-child {
+  position: absolute;
+  top: 56px;
+  width: 100%;
+  height: 56px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 7px;
+  background: rgba(0, 0, 0, 0.4);
+  padding-right: 15px;
+}
+
+.cover-photo-modal-button {
+    padding: 10px 30px;
+    background-color: rgb(111, 78, 55);
+    border-radius: 6px;
+}
+
+.cover-photo-modal-button:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: rgba(111, 78, 55, 0.7);
+}
+
+.cover-photo-modal-button span {
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+}
+
+.cover-photo-modal-button.cancel {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.cover-photo-modal-button.cancel:hover {
+    background: rgba(214, 214, 214, 0.3);
+}
+
+/* profile picture */
+.profile-pic-upload-container {
+    position: absolute;
+    background-color: #e4e6eb;
+    /* bottom: 300px; */
+    /* right: 640px; */
+    bottom: 41%;
+    right: 45%;
+    z-index: 3;
+    /* bottom: -3%;
+    right: 40vw; */
+    /* right: 300px; */
+    /* left: -10%; */
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-pic-upload-container:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: #cbcfd6; 
+}
+
+.profile-pic-upload-label {
+    cursor: pointer;
+}
+
+.profile-pic-upload-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.profile-pic-upload-container input {
+    display: none;
 }
 
 .profile-page-pic {

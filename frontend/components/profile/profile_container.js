@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
 
 import Profile from './profile';
-import { fetchUsers } from '../../actions/user_actions';
+import { fetchUsers, updateUser } from '../../actions/user_actions';
 import { fetchPosts, createPost, deletePost, updatePost } from "../../actions/post_actions";
 import { createComment, deleteComment, updateComment } from "../../actions/comment_actions";
 import { showModal, hideModal } from "../../actions/modal_actions";
@@ -21,6 +21,7 @@ const mDTP = dispatch => ({
     createComment: comment => dispatch(createComment(comment)),
     updateComment: comment => dispatch(updateComment(comment)),
     deleteComment: commentId => dispatch(deleteComment(commentId)),
+    updateUser: user => dispatch(updateUser(user)),
     hideModal: () => dispatch(hideModal()),
     showModal: () => dispatch(showModal('create'))
 })

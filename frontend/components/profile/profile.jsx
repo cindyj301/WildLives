@@ -15,12 +15,12 @@ class Profile extends React.Component {
     }
 
     render() {
-        const { currentUser, hideModal, showModal } = this.props;
+        const { currentUser, hideModal, showModal, updateUser } = this.props;
 
         return (
             <div>
                 <NavBarContainer />
-                <ProfileHeader currentUser={currentUser} />
+                <ProfileHeader currentUser={currentUser} updateUser={updateUser} />
                 <div className="profile-page-container">
                     <div>
                         <ProfileSideBar currentUser={currentUser} />
