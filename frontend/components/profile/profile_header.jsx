@@ -13,15 +13,14 @@ export default class ProfileHeader extends Component {
             open: false
         };
 
-        this.toggleModal = this.toggleModal.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.handleFile = this.handleFile.bind(this);
-        this.handleProfModal = this.handleProfModal.bind(this);
+        this.toggleModal = this.toggleModal.bind(this);
     }
 
     toggleModal() {
-        this.setState({ open: !this.state.open })
+        this.setState({ open: !this.state.open });
     }
 
     handleFile(field) {
@@ -43,6 +42,7 @@ export default class ProfileHeader extends Component {
 
             if (file) {
                 fileReader.readAsDataURL(file);
+
                 this.toggleModal();
             }
         }
@@ -60,16 +60,12 @@ export default class ProfileHeader extends Component {
             formData.append('user[profile_pic]', this.state.profilePic);
         }
 
-        this.props.updateUser(formData).then(this.toggleModal());
+        this.props.updateUser(formData).then(this.toggleModal);
     }
 
     handleCancel() {
         this.setState({ coverPhotoUrl: null });
         this.toggleModal();
-    }
-
-    handleProfModal() {
-        console.log("in modal");
     }
 
     render() {
