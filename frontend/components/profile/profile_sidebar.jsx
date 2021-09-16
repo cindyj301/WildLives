@@ -48,7 +48,7 @@ export default class ProfileSideBar extends Component {
                         {/* add number of friends */}
                     </div>
 
-                    <div className="friends-grid">
+                    {/* <div className="friends-grid">
                         <div>
 
                         </div>
@@ -67,7 +67,7 @@ export default class ProfileSideBar extends Component {
                         <div>
                             
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )

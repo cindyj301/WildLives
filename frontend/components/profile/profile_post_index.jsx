@@ -29,12 +29,10 @@ export default class ProfilePostIndex extends Component {
         }
 
         return (
-            <div>
-                <div className="news-feed-post-container profile">
-                    <Modal />
-                    {createPostButton()}
-                    <PostIndexContainer />
-                </div>
+            <div className="news-feed-post-container profile">
+                <Modal />
+                {createPostButton()}
+                <PostIndexContainer />
             </div>
         )
     }

@@ -22,7 +22,9 @@ class Profile extends React.Component {
                 <NavBarContainer />
                 <ProfileHeader currentUser={currentUser} />
                 <div className="profile-page-container">
-                    <ProfileSideBar currentUser={currentUser} />
+                    <div>
+                        <ProfileSideBar currentUser={currentUser} />
+                    </div>
                     <ProfilePostIndex
                         currentUser={currentUser}
                         hideModal={hideModal}
