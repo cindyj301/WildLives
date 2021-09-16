@@ -1,8 +1,8 @@
 class Api::FriendsController < ApplicationController
-    # def show
-    #     @friend = Friend.where(:requester_id => params[:id])
-    #     render :show
-    # end
+    def show
+        @friend = Friend.where(:requester_id => params[:id])
+        render :show
+    end
 
     def create
         @friend = Friend.new(friend_params)

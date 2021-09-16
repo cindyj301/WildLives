@@ -32,7 +32,7 @@
     transition: 0.5s;
 }
 
-p:first-child {
+.post-form-button p:first-child {
     display: flex;
     justify-content: center;
 }
