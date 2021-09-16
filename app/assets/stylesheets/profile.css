@@ -163,11 +163,31 @@
     display: none;
 }
 
-.profile-page-pic {
+/* .profile-pic-img {
     border-radius: 50%;
     border: 3px solid white;
     position: absolute;
     top: 34%;
+} */
+
+.profile-pic-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: flex-end;
+}
+
+.profile-page-pic {
+  border-radius: 50%;
+  border: 3px solid white;
+  position: absolute;
+  top: 31%;
+  left: 43%;
+  max-width: 100%;
+  max-height: 100%;
+  width: 200px;
+  height: 200px;
+  bottom: -20%;
 }
 
 /* profile info */

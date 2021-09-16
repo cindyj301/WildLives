@@ -17,6 +17,7 @@ export default class ProfileHeader extends Component {
         this.handleCancel = this.handleCancel.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
+        this.profilePicPreview = this.profilePicPreview.bind(this);
     }
 
     toggleModal() {
@@ -68,6 +69,22 @@ export default class ProfileHeader extends Component {
         this.toggleModal();
     }
 
+    profilePicPreview() {
+        // let profilePicSrc;
+
+        // if (this.state.profPhotoUrl) {
+        //     profilePicSrc = this.state.profPhotoUrl;
+        //     // profilePicSrc = slothProfile
+        // } else {
+        //     profilePicSrc = "https://scontent.fhou1-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-5&_nc_sid=7206a8&_nc_ohc=3YCurt1IZskAX_WRAzK&_nc_ht=scontent.fhou1-1.fna&oh=a54fc5a653174e187629be9f492266f1&oe=616682F8";
+        // }
+
+        // return (
+        //     <img src={profilePicSrc} alt="profile-pic" className="profile-page-pic" />
+        // )
+        return this.state.profPhotoUrl ? this.state.profPhotoUrl : "https://scontent.fhou1-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-5&_nc_sid=7206a8&_nc_ohc=3YCurt1IZskAX_WRAzK&_nc_ht=scontent.fhou1-1.fna&oh=a54fc5a653174e187629be9f492266f1&oe=616682F8"
+    }
+
     render() {
         const { currentUser } = this.props;
 
@@ -87,14 +104,6 @@ export default class ProfileHeader extends Component {
                 </div>
             </div>
             : null;
-
-        const profilePicPreview = this.state.profPhotoUrl ?
-            <img src={this.state.profPhotoUrl} className="profile-pic-img" />
-            : <img
-                src="https://scontent.fhou1-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-5&_nc_sid=7206a8&_nc_ohc=3YCurt1IZskAX_WRAzK&_nc_ht=scontent.fhou1-1.fna&oh=a54fc5a653174e187629be9f492266f1&oe=616682F8"
-                className="profile-page-pic"
-                alt="profile-pic"
-            />
 
         return (
             <div className="profile-header-container">
@@ -129,12 +138,16 @@ export default class ProfileHeader extends Component {
                             onChange={this.handleFile('profilePic')}
                         />
                     </div>
-                    {/* {profPicModal} */}
-                    <img
-                        src="https://scontent.fhou1-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-5&_nc_sid=7206a8&_nc_ohc=3YCurt1IZskAX_WRAzK&_nc_ht=scontent.fhou1-1.fna&oh=a54fc5a653174e187629be9f492266f1&oe=616682F8"
-                        className="profile-page-pic"
-                        alt="profile-pic"
-                    />
+                    <div className="profile-pic-wrapper">
+                        {/* {this.profilePicPreview()} */}
+                        {/* {(currentUser.profilePic) ? */}
+                        {/* <img src={currentUser.profilePic} alt="profile-pic" className="profile-page-pic" /> : */}
+                        <img
+                            src={this.profilePicPreview()}
+                            className="profile-page-pic"
+                            alt="profile-pic"
+                        />
+                    </div>
                 </div>
                 <div className="profile-info-container">
                     <span>{capitalize(currentUser.fname) + " " + capitalize(currentUser.lname)}</span>
