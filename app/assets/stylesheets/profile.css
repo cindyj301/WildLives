@@ -163,13 +163,6 @@
     display: none;
 }
 
-/* .profile-pic-img {
-    border-radius: 50%;
-    border: 3px solid white;
-    position: absolute;
-    top: 34%;
-} */
-
 .profile-pic-wrapper {
     display: flex;
     justify-content: center;
