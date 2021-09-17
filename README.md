@@ -1,23 +1,17 @@
 # README
 
-WildLives is a social networking application sharing the wild lives of wild life! You can share and communicate information about  
+## Live Site
+[Into the wild](https://wild-lives.herokuapp.com/#/) 🦥
 
-[Let's get wild](https://wild-lives.herokuapp.com/#/) 🦥
+## Introduction
+WildLives is a social networking application sharing the wild lives of wild life! Sign up as an endangered animal species and share posts and co with your wild life pals.
 
-* Technologies Used:
+## Technologies Used
 
-* System dependencies
+## Features
 
-* Configuration
+## Highlights
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Image Credits
+[WildLives Logo](http://skobo.pl/annskoblog/project/sloth-logo/)
+[Sloth Friends Icon](https://www.pngitem.com/middle/ThhwmJo_draw-so-cute-sloth-cartoon-sloth-png-transparent/)
