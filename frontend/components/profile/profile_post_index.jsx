@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { withRouter } from 'react-router';
+import { connect } from 'react-redux';
 
 // component imports
 import Modal from '../modal/modal';
@@ -6,9 +8,18 @@ import PostIndexContainer from './profile_post_index_container';
 
 // util imports
 import { capitalize } from '../../util/format_util';
+import { fetchUser } from '../../actions/user_actions';
 
-export default class ProfilePostIndex extends Component {
+class ProfilePostIndex extends React.Component {
+    componentDidMount() {   
+        this.props.fetchUser(this.props.match.params.userId)
+    }   
+
     render() {
+        console.log(this.props.user)
+
+        if (!this.props.user) return null;
+
         const createPostButton = () => {
             return (
                 <div className="post-form-button-container">
@@ -23,9 +34,17 @@ export default class ProfilePostIndex extends Component {
                                 />
                             }
                         </li>
-                        <p onClick={() => this.props.showModal()}>
+                        {/* <p onClick={() => this.props.showModal()}>
                             What's on your mind, {capitalize(this.props.currentUser.fname)}?
-                        </p>
+                        </p> */}
+                        { this.props.match.params.userId == this.props.currentUser.id ? 
+                            <p onClick={() => this.props.showModal()}>
+                                What's on your mind, {capitalize(this.props.currentUser.fname)}?
+                            </p>
+                            : <p onClick={() => this.props.showModal()}>
+                                Write something to {capitalize(this.props.user.fname)}...
+                            </p>
+                        }
                     </div>
                 </div>
             )
@@ -40,3 +59,13 @@ export default class ProfilePostIndex extends Component {
         )
     }
 }
+
+const mSTP = ({ entities: { users } }, ownProps) => ({
+    user: users[ownProps.match.params.userId]
+})
+
+const mDTP = dispatch => ({
+    fetchUser: userId => dispatch(fetchUser(userId))
+})
+
+export default withRouter(connect(mSTP, mDTP)(ProfilePostIndex));

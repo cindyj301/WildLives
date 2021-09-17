@@ -16,6 +16,8 @@ class ProfileSideBar extends React.Component {
     render() {
         const { user } = this.props;
 
+        if (!user) return null;
+
         const statusIcon = () => {
             if (user.status === 'Critically Endangered') {
                 return <img

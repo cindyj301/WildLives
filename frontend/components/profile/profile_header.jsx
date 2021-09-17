@@ -84,6 +84,8 @@ class ProfileHeader extends React.Component {
     render() {
         const { user } = this.props;
 
+        if (!user) return null;
+
         const coverPhotoPreview = this.state.coverPhotoUrl ?
             <img src={this.state.coverPhotoUrl} className="cover-photo-img" />
             : <div className="cover-photo"></div>;
