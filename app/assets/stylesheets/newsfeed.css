@@ -1,9 +1,9 @@
 .news-feed-container {
     background-color: #f0f2f5;
     display: grid;
-    grid-template-columns: 30% 40% 30%;
+    grid-template-columns: 30% 38% 30%;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     grid-template-rows: auto;
     grid-template-areas: 
     "leftbar main rightbar"
@@ -22,11 +22,15 @@
     overflow: auto;
 }
 
-.contacts-container {
+.right-bar-container {
     grid-area: rightbar;
     overflow: hidden;
     position: fixed;
     right: 0;
-    height: 100vh;
+    height: max-content;
     width: 25%;
+    /* background-color: lavender; */
+    padding-bottom: 15px;
+    margin-right: 10px;
+    border-bottom: 0.5px solid rgba(170, 169, 169, 0.808);
 }

@@ -1,0 +1,34 @@
+.right-bar-container h3 {
+    color: #65676B;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.right-bar-list-item {
+    /* background: lightcoral; */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 7px;
+    margin-bottom: 7px;
+    padding: 5px;
+}
+
+.right-bar-list-item:hover {
+    background-color: rgba(194, 194, 194, 0.4);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.right-bar-list img {
+    width: 110px;
+    height: 116px;
+}
+
+.right-bar-list a {
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}

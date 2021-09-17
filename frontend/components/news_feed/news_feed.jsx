@@ -5,7 +5,7 @@ import NavBarContainer from '../../components/navbar/navbar_container';
 import NavigationContainer from './navigation_container';
 import Modal from '../modal/modal';
 import PostIndexContainer from '../posts/post_index_container';
-import Contacts from './contacts';
+import RightBar from './right_bar';
 
 // splash
 import LoginFormContainer from '../login/login_form_container';
@@ -46,7 +46,7 @@ const NewsFeed = ({ currentUser, showModal }) => {
                     {createPostButton()}
                     <PostIndexContainer />
                 </div>
-                <Contacts /> {/*  change to container? */}
+                <RightBar /> 
             </div>
         </div>
     );
