@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 
 import { capitalize } from '../../util/format_util'
 
-export default class ProfileHeader extends Component {
+class ProfileHeader extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -52,7 +54,7 @@ export default class ProfileHeader extends Component {
         e.preventDefault();
 
         const formData = new FormData();
-        formData.append('user[id]', this.props.currentUser.id);
+        formData.append('user[id]', this.props.user.id);
 
         if (this.state.coverPhotoUrl) {
             formData.append('user[cover_photo]', this.state.coverPhoto);
@@ -75,7 +77,7 @@ export default class ProfileHeader extends Component {
     }
 
     render() {
-        const { currentUser } = this.props;
+        const { user } = this.props;
 
         const coverPhotoPreview = this.state.coverPhotoUrl ?
             <img src={this.state.coverPhotoUrl} className="cover-photo-img" />
@@ -101,8 +103,8 @@ export default class ProfileHeader extends Component {
                     <div className="cover-photo-container">     
                         <div className="cover-photo-upload-container">
                             {coverPhotoPreview}
-                            { (currentUser.coverPhoto) ?
-                                <img src={currentUser.coverPhoto} alt="cover-photo" /> :
+                            { (user.coverPhoto) ?
+                                <img src={user.coverPhoto} alt="cover-photo" /> :
                                 <div className="cover-photo"></div> }
                             <div className="cover-photo-upload-label-container">
                                 <label className="cover-photo-upload-label" htmlFor="cover-photo-input">
@@ -133,8 +135,8 @@ export default class ProfileHeader extends Component {
                             className="profile-page-pic"
                             alt="profile-pic"
                         />
-                        { currentUser.profilePic ? 
-                            <img src={currentUser.profilePic} alt="profile-pic" className="profile-page-pic" />
+                        { user.profilePic ? 
+                            <img src={user.profilePic} alt="profile-pic" className="profile-page-pic" />
                             : <img
                                 src={this.profilePicPreview()}
                                 className="profile-page-pic"
@@ -144,7 +146,7 @@ export default class ProfileHeader extends Component {
                     </div>
                 </div>
                 <div className="profile-info-container">
-                    <span>{capitalize(currentUser.fname) + " " + capitalize(currentUser.lname)}</span>
+                    <span>{capitalize(user.fname) + " " + capitalize(user.lname)}</span>
                 </div>
                 <div className="profile-page-nav-container">
                     <ul className="profile-page-nav">
@@ -153,8 +155,9 @@ export default class ProfileHeader extends Component {
                             <li className="profile-page-nav-tab-items">Friends</li> {/* add number of friends */}
                         </div>
                         <div className="add-friend-container">
-                            <img className="add-friend-icon" src={addFriend} alt="Credit: Add Friend by FBianchi from the Noun Project" />
-                            <span className="add-friend-text">Add Friend</span>
+                            {/* <img className="add-friend-icon" src={addFriend} alt="Credit: Add Friend by FBianchi from the Noun Project" /> */}
+                            {/* <span className="add-friend-text">Add Friend</span> */}
+                            <span className="add-friend-text">Remove Friend</span>
                         </div>
                     </ul>
                 </div>
@@ -162,3 +165,9 @@ export default class ProfileHeader extends Component {
         )
     }
 }
+
+const mSTP = ({ entities: { users } }, ownProps) => ({
+    user: users[ownProps.match.params.userId]
+})
+
+export default withRouter(connect(mSTP)(ProfileHeader));

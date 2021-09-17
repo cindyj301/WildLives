@@ -98,7 +98,7 @@ user8 = User.create!(
 user9 = User.create!(
     fname: 'Camille',
     lname: 'Cat',
-    email: Faker::Internet.email,
+    email: 'email@email.com',
     password: 'password',
     animal: 'Rusty-spotted Cat',
     status: 'Vulnerable'

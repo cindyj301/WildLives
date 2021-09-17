@@ -319,8 +319,9 @@
     border-radius: 6px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     padding: 15px;
-    height: 500px;
-    width: 365px;
+    height: max-content;
+    /* width: 365px; */
+    width: max-content;
 }
 
 .friends-header {
@@ -336,6 +337,45 @@
 
 .friends-header p {
     font-size: 15px;
+    color: rgb(128, 86, 56);
+}
+
+.friends-link {
+    color: black;
+    text-decoration: none;
+}
+
+.friends-list-grid {
+    margin-top: 20px;
+    /* background-color: red; */
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.friends-list-item {
+    /* background-color: lavenderblush; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    text-align: start;
+    font-size: 13px;
+    font-weight: 550;
+}
+
+.friends-profile-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+}
+
+.friends-profile-icon:hover {
+    cursor: pointer;
 }
 
 /* profile posts */

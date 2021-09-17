@@ -6,11 +6,14 @@ import { fetchPosts, createPost, deletePost, updatePost } from "../../actions/po
 import { createComment, deleteComment, updateComment } from "../../actions/comment_actions";
 import { showModal, hideModal } from "../../actions/modal_actions";
 
-const mSTP = ({ entities: { users }, session }, ownProps) => ({
-    user: users[ownProps.match.params.userId],
-    currentUser: users[session.id],
-    users: Object.values(users)
-})
+const mSTP = (state, ownProps) => {
+    // console.log(Object.values(state.entities.users))
+    // console.log(state.entities.users)
+    return {
+    user: state.entities.users[ownProps.match.params.userId],
+    currentUser: state.entities.users[state.session.id],
+    users: Object.values(state.entities.users)
+}}
 
 const mDTP = dispatch => ({
     fetchUsers: () => dispatch(fetchUsers()),
