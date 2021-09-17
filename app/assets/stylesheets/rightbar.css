@@ -12,8 +12,8 @@
     align-items: center;
     gap: 10px;
     border-radius: 7px;
-    margin-bottom: 7px;
-    padding: 5px;
+    margin-bottom: 5px;
+    padding: 7px;
 }
 
 .right-bar-list-item:hover {
@@ -23,8 +23,14 @@
 }
 
 .right-bar-list img {
-    width: 110px;
-    height: 116px;
+    width: 100px;
+    height: 100px;
+}
+
+.right-bar-list-item.first img {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
 }
 
 .right-bar-list a {
