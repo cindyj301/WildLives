@@ -6,8 +6,13 @@ import { Link } from 'react-router-dom';
 import PetsIcon from '@material-ui/icons/Pets';
 
 import { capitalize } from '../../util/format_util';
+// import { fetchUser } from '../../actions/user_actions';
 
 class ProfileSideBar extends React.Component {
+    // componentDidMount() {
+    //     this.props.fetchUser(this.props.match.params.userId);
+    // }
+
     render() {
         const { user } = this.props;
 
@@ -87,5 +92,9 @@ const mSTP = ({ entities: { users } }, ownProps) => ({
     friends: Object.values(users).filter(user => user.id != ownProps.match.params.userId),
     user: users[ownProps.match.params.userId]
 })
+
+// const mDTP = dispatch => ({
+//     fetchUser: (userId) => dispatch(fetchUser(userId))
+// })
 
 export default withRouter(connect(mSTP)(ProfileSideBar));

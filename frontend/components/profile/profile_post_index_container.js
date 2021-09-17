@@ -8,7 +8,7 @@ import { fetchComments } from '../../actions/comment_actions';
 
 const mSTP = (state, ownProps) => {
     return {
-        posts: userPosts(state.entities, state.entities.users[state.session.id]),
+        posts: userPosts(state.entities, state.entities.users[ownProps.match.params.userId]),
         errors: state.errors.post,
         author: state.entities.posts.author,
         currentUser: state.entities.users[state.session.id],

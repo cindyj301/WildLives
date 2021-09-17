@@ -7,8 +7,6 @@ import { createComment, deleteComment, updateComment } from "../../actions/comme
 import { showModal, hideModal } from "../../actions/modal_actions";
 
 const mSTP = (state, ownProps) => {
-    // console.log(Object.values(state.entities.users))
-    // console.log(state.entities.users)
     return {
     user: state.entities.users[ownProps.match.params.userId],
     currentUser: state.entities.users[state.session.id],
