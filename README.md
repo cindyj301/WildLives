@@ -1,11 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WildLives is a social networking application sharing the wild lives of wild life! You can share and communicate information about  
 
-Things you may want to cover:
+[Let's get wild](https://wild-lives.herokuapp.com/#/) 🦥
 
-* Ruby version
+* Technologies Used:
 
 * System dependencies
 
