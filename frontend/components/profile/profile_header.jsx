@@ -177,8 +177,8 @@ const mSTP = ({ entities: { users } }, ownProps) => ({
     user: users[ownProps.match.params.userId]
 })
 
-const mDTP = dispatch => ({
-    fetchUser: (userId) => dispatch(fetchUser(userId))
-})
+// const mDTP = dispatch => ({
+//     fetchUser: (userId) => dispatch(fetchUser(userId))
+// })
 
 export default withRouter(connect(mSTP)(ProfileHeader));
