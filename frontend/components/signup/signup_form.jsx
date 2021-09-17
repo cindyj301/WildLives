@@ -26,7 +26,7 @@ class SignupForm extends React.Component {
                 password: '',
                 animal: '',
                 status: ''
-            }));
+            })).then(this.props.hideModal);
     }
 
     handleChange(field) {
