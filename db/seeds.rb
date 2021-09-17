@@ -53,7 +53,7 @@ user3 = User.create!(
 user4 = User.create!(
     fname: 'Polly',
     lname: 'Penguin',
-    email: Faker::Internet.email,
+    email: 'polly@email.com',
     password: 'password',
     animal: 'Southern Rockhopper Penguin',
     status: 'Vulnerable'
@@ -62,7 +62,7 @@ user4 = User.create!(
 user5 = User.create!(
     fname: 'Peter',
     lname: 'Panda',
-    email: Faker::Internet.email,
+    email: 'panda@email.com',
     password: 'password',
     animal: 'Red Panda',
     status: 'Endangered'
@@ -71,7 +71,7 @@ user5 = User.create!(
 user6 = User.create!(
     fname: 'Lenny',
     lname: 'Leopard',
-    email: Faker::Internet.email,
+    email: 'leopard@email.com',
     password: 'password',
     animal: 'Snow Leopard',
     status: 'Vulnerable'
@@ -80,7 +80,7 @@ user6 = User.create!(
 user7 = User.create!(
     fname: 'Penelope',
     lname: 'Porpoise',
-    email: Faker::Internet.email,
+    email: 'porpoise@email.com',
     password: 'password',
     animal: 'Yangtze Finless Porpoise',
     status: 'Critically Endangered'
@@ -89,7 +89,7 @@ user7 = User.create!(
 user8 = User.create!(
     fname: 'Fiona',
     lname: 'Ferret',
-    email: Faker::Internet.email,
+    email: 'ferret@email.com',
     password: 'password',
     animal: 'Black-footed Ferret',
     status: 'Endangered'
@@ -107,7 +107,7 @@ user9 = User.create!(
 user10 = User.create!(
     fname: 'Waldo',
     lname: 'Whale',
-    email: Faker::Internet.email,
+    email: 'whale@email.com',
     password: 'password',
     animal: 'Blue Whale',
     status: 'Endangered'
