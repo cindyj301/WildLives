@@ -13,8 +13,12 @@
     grid-area: leftbar;
     overflow: hidden;
     position: fixed;
-    height: 100vh;
+    height: 500px;
     width: 25%;
+    /* background-color: cadetblue; */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .news-feed-post-container {
