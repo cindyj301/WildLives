@@ -115,52 +115,62 @@ user10 = User.create!(
 
 post1 = Post.create!(
     body: "Love me some durian.",
-    post_author_id: user1.id
+    post_author_id: user1.id,
+    wall_id: user1.id
 )
 
 post2 = Post.create!(
     body: "Hanging around; might take a nap later.",
-    post_author_id: demo_user.id
+    post_author_id: demo_user.id,
+    wall_id: demo_user.id
 )
 
 post3 = Post.create!(
     body: "Heading to the water later. Who wants in?",
-    post_author_id: user2.id
+    post_author_id: user2.id,
+    wall_id: user2.id
 )
 
 post4 = Post.create!(
     body: 'Love my herd <3',
-    post_author_id: user3.id
+    post_author_id: user3.id,
+    wall_id: user3.id
 )
 
 post5 = Post.create!(
     body: "Can't wait to go climbing later!",
-    post_author_id: user6.id
+    post_author_id: user6.id,
+    wall_id: user6.id
 )
 
 post6 = Post.create!(
     body: 'Eating some plankton.',
-    post_author_id: user4.id
+    post_author_id: user4.id,
+    wall_id: user4.id
 )
 
 post7 = Post.create!(
     body: 'Miss my Baiji dolphin friends :(',
-    post_author_id: user7.id
+    post_author_id: user7.id,
+    wall_id: user7.id
 )
 
 post8 = Post.create!(
     body: "Swimmin' solo.",
-    post_author_id: user10.id
+    post_author_id: user10.id,
+    wall_id: user10.id
 )
 
 post9 = Post.create!(
     body: 'Playing Solitare.',
-    post_author_id: user8.id
+    post_author_id: user8.id,
+    wall_id: user8.id
 )
 
 post10 = Post.create!(
     body: 'Staying up late tonight.',
-    post_author_id: user9.id
+    post_author_id: user9.id,
+    wall_id: user9.id
 )
 
 comment1 = Comment.create!(
