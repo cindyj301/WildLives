@@ -24,6 +24,12 @@ class PostForm extends React.Component {
     const formData = new FormData(); // instantiate new FormData object to upload file and send to server to be saved
     formData.append("post[body]", this.state.body); // using append method to add key/values to server (make sure keys match strong params in rails controller)
 
+    if (this.props.wallId) {
+      formData.append("post[wall_id]", this.props.wallId);
+    } else {
+      formData.append("post[wall_id]", this.props.currentUser.id);
+    }
+
     if (this.state.photoFile) {
       formData.append("post[photo]", this.state.photoFile);
     }

@@ -13,6 +13,11 @@ class User < ApplicationRecord
         foreign_key: :post_author_id,
         class_name: :Post,
         dependent: :destroy
+    
+    has_many :wall_posts,
+        foreign_key: :wall_id,
+        class_name: :Post,
+        dependent: :destroy
 
     has_many :comments,
         foreign_key: :comment_author_id,

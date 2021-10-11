@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 // component imports
 import Modal from "../modal/modal";
-import PostIndexContainer from "./profile_post_index_container";
+import ProfilePostIndexContainer from "./profile_post_index_container";
 
 // util imports
 import { capitalize } from "../../util/format_util";
@@ -37,9 +37,6 @@ class ProfilePostIndex extends React.Component {
                 />
               )}
             </li>
-            {/* <p onClick={() => this.props.showModal()}>
-                            What's on your mind, {capitalize(this.props.currentUser.fname)}?
-                        </p> */}
             {this.props.match.params.userId == this.props.currentUser.id ? (
               <p onClick={() => this.props.showModal()}>
                 What's on your mind, {capitalize(this.props.currentUser.fname)}?
@@ -58,15 +55,17 @@ class ProfilePostIndex extends React.Component {
       <div className="news-feed-post-container profile">
         <Modal />
         {createPostButton()}
-        <PostIndexContainer />
+        <ProfilePostIndexContainer />
       </div>
     );
   }
 }
 
-const mSTP = ({ entities: { users } }, ownProps) => ({
-  user: users[ownProps.match.params.userId],
-});
+const mSTP = ({ entities: { users } }, ownProps) => {
+  return {
+    user: users[ownProps.match.params.userId],
+  };
+};
 
 const mDTP = (dispatch) => ({
   fetchUser: (userId) => dispatch(fetchUser(userId)),
