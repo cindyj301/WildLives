@@ -1,3 +1,2 @@
-json.array! @friend do |fri|
-    json.extract! fri, :id, :requester_id, :requestee_id
-end
+json.requesters @friend_requesters, :id, :fname, :lname, :email, :animal, :status
+json.requestees @friend_requestees, :id, :fname, :lname, :email, :animal, :status

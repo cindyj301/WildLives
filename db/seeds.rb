@@ -214,3 +214,13 @@ comment7 = Comment.create!(
     post_id: post4.id,
     comment_author_id: user4.id
 )
+
+Friend.create!(requester_id: demo_user.id, requestee_id: user1.id)
+Friend.create!(requester_id: demo_user.id, requestee_id: user2.id)
+Friend.create!(requester_id: demo_user.id, requestee_id: user3.id)
+Friend.create!(requester_id: demo_user.id, requestee_id: user4.id)
+Friend.create!(requester_id: demo_user.id, requestee_id: user5.id)
+# Friend.create!(requester_id: demo_user.id, requestee_id: user6.id)
+# Friend.create!(requester_id: demo_user.id, requestee_id: user7.id)
+# Friend.create!(requester_id: demo_user.id, requestee_id: user8.id)
+# Friend.create!(requester_id: demo_user.id, requestee_id: user9.id)
