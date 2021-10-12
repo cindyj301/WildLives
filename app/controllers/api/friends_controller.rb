@@ -1,8 +1,7 @@
 class Api::FriendsController < ApplicationController
     def show
-        @friend_requestees = User.find_by(id: params[:id]).friend_requestees
-        @friend_requesters = User.find_by(id: params[:id]).friend_requesters
-        render :show
+        @friend = Friend.find_by(requester_id: params[:requester_id])
+        render :index
     end
 
     def create

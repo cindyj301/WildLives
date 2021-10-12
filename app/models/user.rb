@@ -32,17 +32,19 @@ class User < ApplicationRecord
         foreign_key: :requestee_id,
         class_name: :Friend
 
-    has_many :requestees,
+    has_many :requestees, # User model instance of people I've friended
         through: :friend_requestees,
-        source: :requestee
+        source: :requestee,
+        dependent: :destroy
 
     has_many :friend_requesters,
         foreign_key: :requester_id,
         class_name: :Friend
 
-    has_many :requesters,
+    has_many :requesters, # User model instance of people who have friended me
         through: :friend_requesters,
-        source: :requester
+        source: :requester,
+        dependent: :destroy
   
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
