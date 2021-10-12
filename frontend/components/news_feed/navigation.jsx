@@ -55,6 +55,15 @@ const Navigation = ({ currentUser }) => {
     );
   };
 
+  const angellistIcon = () => {
+    return (
+      <div className="personal-icon angellist">
+        <img src={angellist} alt="angellist" />
+        <span>AngelList</span>
+      </div>
+    );
+  };
+
   return (
     <ul className="navigation-container">
       <div className="left-nav-item-container">
@@ -76,6 +85,9 @@ const Navigation = ({ currentUser }) => {
           href="https://www.linkedin.com/in/jiang-cindy/"
         >
           <NavigationItem icon={linkedInIcon()} />
+        </a>
+        <a className="personal-links" href="https://angel.co/u/cindy-jiang-4">
+          <NavigationItem icon={angellistIcon()} />
         </a>
         <div className="tech-description">
           <span>Ruby on Rails</span>

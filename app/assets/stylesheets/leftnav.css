@@ -1,12 +1,12 @@
 .left-nav-item-container {
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-    /* background-color: burlywood; */
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  /* background-color: burlywood; */
 }
 
 .left-nav-item-container:first-child {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 /* .left-nav-icon-container {
@@ -15,111 +15,116 @@
 
 /* profile icon */
 .left-nav-profile-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 6px;
-    padding: 8px;
-    border-radius: 8px;
-    /* background: palevioletred; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 8px;
+  /* background: palevioletred; */
 }
 
 .left-nav-profile-container:hover {
-    background-color: #dbdde0;
-    cursor: pointer;
-    transition: 0.5s;
+  background-color: #dbdde0;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .left-nav-profile-container span {
-    font-size: 15px;
-    color: #050505;
+  font-size: 15px;
+  color: #050505;
 }
 
 .profile-icon.left-nav {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 0.5px solid rgba(170, 169, 169, 0.808);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 0.5px solid rgba(170, 169, 169, 0.808);
 }
 
 /* friends icon */
 .left-nav-friends-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 6px;
-    padding: 8px;
-    border-radius: 8px;
-    /* background: palevioletred; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 8px;
+  /* background: palevioletred; */
 }
 
 .left-nav-friends-container:hover {
-    background-color: #dbdde0;
-    cursor: pointer;
-    transition: 0.5s;
+  background-color: #dbdde0;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .left-nav-friends-container span {
-    font-size: 15px;
-    color: #050505;
+  font-size: 15px;
+  color: #050505;
 }
 
 .friends-icon {
-    width: 36px;
-    height: 36px;
+  width: 36px;
+  height: 36px;
 }
 
 /* personal links */
 .left-nav-item-container.personal {
-    /* background-color: coral; */
-    border-top: 0.5px solid rgba(170, 169, 169, 0.808);
-    margin-left: 10px;
+  /* background-color: coral; */
+  border-top: 0.5px solid rgba(170, 169, 169, 0.808);
+  margin-left: 10px;
 }
 
 .left-nav-item-container.personal h3 {
-    color: #65676B;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 7px;
-    margin-top: 5px;
-    margin-left: 5px;
+  color: #65676b;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 7px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .personal-links {
-    text-decoration: none;
-    color: black;
-    /* background-color: cornsilk; */
-    margin-top: 5px;
-    padding: 8px;
-    border-radius: 8px;
+  text-decoration: none;
+  color: black;
+  /* background-color: cornsilk; */
+  margin-top: 5px;
+  padding: 8px;
+  border-radius: 8px;
 }
 
 .personal-links:hover {
-    background-color: #dbdde0;
-    cursor: pointer;
-    transition: 0.5s;
+  background-color: #dbdde0;
+  cursor: pointer;
+  transition: 0.5s;
 }
 
 .personal-icon {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .personal-icon img {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .personal-icon span {
-    font-size: 15px;
-    color: #050505;    
+  font-size: 15px;
+  color: #050505;
+}
+
+.personal-icon.angellist img {
+  width: 25px;
+  height: 35px;
 }
 
 .tech-description {
-    font-size: 13px;
-    color: #65676B;
-    font-weight: 400;
-    margin-left: 10px;
-    margin-top: 10px;
+  font-size: 13px;
+  color: #65676b;
+  font-weight: 400;
+  margin-left: 10px;
+  margin-top: 10px;
 }
