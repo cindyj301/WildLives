@@ -28,20 +28,22 @@ class User < ApplicationRecord
     
     has_one_attached :cover_photo
 
-    has_many :requesters,
-        foreign_key: :requester_id,
-        class_name: :Friend,
-        dependent: :destroy
-    
-    has_many :requestees,
+    has_many :friend_requestees,
         foreign_key: :requestee_id,
-        class_name: :Friend,
-        dependent: :destroy
+        class_name: :Friend
 
-    def friendships
-        requesters.or(requestees)
-    end
+    has_many :requestees,
+        through: :friend_requestees,
+        source: :requestee
 
+    has_many :friend_requesters,
+        foreign_key: :requester_id,
+        class_name: :Friend
+
+    has_many :requesters,
+        through: :friend_requesters,
+        source: :requester
+  
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
         user && user.is_password?(password) ? user : nil

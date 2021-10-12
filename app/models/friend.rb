@@ -9,5 +9,4 @@ class Friend < ApplicationRecord
     belongs_to :requestee,
         foreign_key: :requestee_id,
         class_name: :User
-        
 end
