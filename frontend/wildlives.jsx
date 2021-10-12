@@ -4,15 +4,6 @@ import configureStore from "./store/store";
 
 import Root from "./components/root";
 
-// for testing: remove later
-import { fetchUsers, fetchUser } from "./actions/user_actions";
-
-import {
-  createFriendship,
-  deleteFriendship,
-  fetchFriendships,
-} from "./actions/friend_actions";
-
 document.addEventListener("DOMContentLoaded", () => {
   let store;
   if (window.currentUser) {
@@ -27,15 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-
-  // for testing: remove later
-  window.dispatch = store.dispatch;
-  window.getState = store.getState;
-  window.fetchUsers = fetchUsers;
-  window.fetchUser = fetchUser;
-  window.createFriendship = createFriendship;
-  window.deleteFriendship = deleteFriendship;
-  window.fetchFriendships = fetchFriendships;
 
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);

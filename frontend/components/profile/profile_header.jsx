@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 
 import { capitalize } from "../../util/format_util";
-// import { fetchUser } from '../../actions/user_actions';
 
 class ProfileHeader extends React.Component {
   constructor(props) {
@@ -22,10 +21,6 @@ class ProfileHeader extends React.Component {
     this.toggleModal = this.toggleModal.bind(this);
     this.profilePicPreview = this.profilePicPreview.bind(this);
   }
-
-  // componentDidMount() {
-  //     this.props.fetchUser(this.props.match.params.userId);
-  // }
 
   toggleModal() {
     this.setState({ open: !this.state.open });
@@ -193,7 +188,7 @@ class ProfileHeader extends React.Component {
           <ul className="profile-page-nav">
             <div className="profile-page-nav-tab-items-container">
               <li className="profile-page-nav-tab-items">Posts</li>
-              <li className="profile-page-nav-tab-items">Friends</li>{" "}
+              <li className="profile-page-nav-tab-items">Friends</li>
               {/* add number of friends */}
             </div>
             <div className="add-friend-container">
@@ -215,9 +210,5 @@ class ProfileHeader extends React.Component {
 const mSTP = ({ entities: { users } }, ownProps) => ({
   user: users[ownProps.match.params.userId],
 });
-
-// const mDTP = dispatch => ({
-//     fetchUser: (userId) => dispatch(fetchUser(userId))
-// })
 
 export default withRouter(connect(mSTP)(ProfileHeader));

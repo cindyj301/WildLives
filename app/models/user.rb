@@ -29,7 +29,7 @@ class User < ApplicationRecord
     has_one_attached :cover_photo
 
     has_many :friend_requestees,
-        foreign_key: :requestee_id,
+        foreign_key: :requester_id,
         class_name: :Friend
 
     has_many :requestees, # User model instance of people I've friended
@@ -38,7 +38,7 @@ class User < ApplicationRecord
         dependent: :destroy
 
     has_many :friend_requesters,
-        foreign_key: :requester_id,
+        foreign_key: :requestee_id,
         class_name: :Friend
 
     has_many :requesters, # User model instance of people who have friended me

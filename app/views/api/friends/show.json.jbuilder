@@ -1,1 +1,0 @@
-json.extract! @friend, :id, :requester_id, :requestee_id if @friend
