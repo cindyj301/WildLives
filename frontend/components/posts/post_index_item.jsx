@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // component imports
 import PostModifyIcon from "./post_modify_icon";
@@ -41,21 +42,27 @@ const PostIndexItem = ({
       <div className="post-item-header-container">
         <div className="post-item-profile-container">
           {post.profilePic ? (
-            <img
-              src={post.profilePic}
-              alt="profile-icon"
-              className="profile-icon post-item"
-            />
+            <Link to={`/users/${postAuthorId}`} className="link">
+              <img
+                src={post.profilePic}
+                alt="profile-icon"
+                className="profile-icon post-item"
+              />
+            </Link>
           ) : (
-            <img
-              className="profile-icon post-item"
-              src={defaultPic}
-              alt="profile-icon"
-            />
+            <Link to={`/users/${postAuthorId}`} className="link">
+              <img
+                className="profile-icon post-item"
+                src={defaultPic}
+                alt="profile-icon"
+              />
+            </Link>
           )}
           <div className="name-date-container">
             <span className="name">
-              {capitalize(fname) + " " + capitalize(lname)}
+              <Link to={`/users/${postAuthorId}`} className="link">
+                {capitalize(fname) + " " + capitalize(lname)}
+              </Link>
             </span>
             <span className="date">{date}</span>
           </div>

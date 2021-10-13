@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { capitalize, formatDate } from "../../util/format_util";
 
@@ -108,9 +109,14 @@ class CommentIndexItem extends React.Component {
             ) : (
               <div>
                 <span className="name comment">
-                  {capitalize(this.props.commenter.fname) +
-                    " " +
-                    capitalize(this.props.commenter.lname)}
+                  <Link
+                    to={`/users/${this.props.commenterId}`}
+                    className="link"
+                  >
+                    {capitalize(this.props.commenter.fname) +
+                      " " +
+                      capitalize(this.props.commenter.lname)}
+                  </Link>
                 </span>
                 <div className="comment-body-text">{this.state.body}</div>
               </div>
