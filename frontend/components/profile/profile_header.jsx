@@ -91,7 +91,7 @@ class ProfileHeader extends React.Component {
   profilePicPreview() {
     return this.state.profPhotoUrl
       ? this.state.profPhotoUrl
-      : "https://scontent.fhou1-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-5&_nc_sid=7206a8&_nc_ohc=3YCurt1IZskAX_WRAzK&_nc_ht=scontent.fhou1-1.fna&oh=a54fc5a653174e187629be9f492266f1&oe=616682F8";
+      : defaultProfPagePic;
   }
 
   removeFriend(friendIds) {
