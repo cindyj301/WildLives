@@ -58,6 +58,7 @@
 .post-photo {
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 /* link */
