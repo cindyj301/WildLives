@@ -14,7 +14,10 @@ class FriendsPage extends React.Component {
   }
 
   render() {
-    const { currentUser, updateUser, friends } = this.props;
+    const { currentUser, updateUser, friends, users } = this.props;
+
+    if (!friends) return null;
+    if (!users) return null;
 
     const allFriends = () =>
       friends.map((friend) => (
@@ -24,19 +27,21 @@ class FriendsPage extends React.Component {
           className="friends-link"
         >
           <div className="friends-list-item friends-page">
-            {friend.profilePic ? (
-              <img
-                src={friend.profilePic}
-                alt="profile-pic"
-                className="friends-profile-icon"
-              />
-            ) : (
-              <img
-                src={defaultPic}
-                alt="profile-pic"
-                className="friends-profile-icon"
-              />
-            )}
+            {users[friend.id] ? (
+              users[friend.id].profilePic ? (
+                <img
+                  src={users[friend.id].profilePic}
+                  alt="profile-pic"
+                  className="friends-profile-icon"
+                />
+              ) : (
+                <img
+                  src={defaultPic}
+                  alt="profile-pic"
+                  className="friends-profile-icon"
+                />
+              )
+            ) : null}
             <span>
               {capitalize(friend.fname) + " " + capitalize(friend.lname)}
             </span>
@@ -64,7 +69,8 @@ class FriendsPage extends React.Component {
 const mSTP = ({ entities: { users }, session }, ownProps) => ({
   user: users[ownProps.match.params.userId],
   currentUser: users[session.id],
-  friends: users[ownProps.match.params.userId].friends,
+  friends: users[ownProps.match.params.userId]?.friends,
+  users: users,
 });
 
 const mDTP = (dispatch) => ({

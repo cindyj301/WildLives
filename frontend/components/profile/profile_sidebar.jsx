@@ -9,10 +9,11 @@ import { capitalize } from "../../util/format_util";
 
 class ProfileSideBar extends React.Component {
   render() {
-    const { user, friends } = this.props;
+    const { user, friends, users } = this.props;
 
     if (!user) return null;
     if (!friends) return null;
+    if (!users) return null;
 
     const statusIcon = () => {
       if (user.status === "Critically Endangered") {
@@ -43,7 +44,7 @@ class ProfileSideBar extends React.Component {
     };
 
     const allFriends = () => {
-      return this.props.friends
+      return friends
         .map((friend) => (
           <Link
             to={`/users/${friend.id}`}
@@ -51,19 +52,21 @@ class ProfileSideBar extends React.Component {
             className="friends-link"
           >
             <div className="friends-list-item">
-              {friend.profilePic ? (
-                <img
-                  src={friend.profilePic}
-                  alt="profile-pic"
-                  className="friends-profile-icon"
-                />
-              ) : (
-                <img
-                  src={defaultPic}
-                  alt="profile-pic"
-                  className="friends-profile-icon"
-                />
-              )}
+              {users[friend.id] ? (
+                users[friend.id].profilePic ? (
+                  <img
+                    src={users[friend.id].profilePic}
+                    alt="profile-pic"
+                    className="friends-profile-icon"
+                  />
+                ) : (
+                  <img
+                    src={defaultPic}
+                    alt="profile-pic"
+                    className="friends-profile-icon"
+                  />
+                )
+              ) : null}
               {capitalize(friend.fname) + " " + capitalize(friend.lname)}
             </div>
           </Link>
@@ -111,6 +114,7 @@ class ProfileSideBar extends React.Component {
 const mSTP = ({ entities: { users } }, ownProps) => ({
   friends: users[ownProps.match.params.userId]?.friends,
   user: users[ownProps.match.params.userId],
+  users: users,
 });
 
 export default withRouter(connect(mSTP)(ProfileSideBar));
