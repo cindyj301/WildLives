@@ -1,11 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 import ProfileHeader from "./profile_header";
 import NavBarContainer from "../navbar/navbar_container";
 
 import { fetchUsers, updateUser } from "../../actions/user_actions";
-import { allUsers } from "../../util/format_util";
+import { capitalize } from "../../util/format_util";
 
 class FriendsPage extends React.Component {
   componentDidMount() {
@@ -13,15 +14,47 @@ class FriendsPage extends React.Component {
   }
 
   render() {
-    const { currentUser, updateUser } = this.props;
+    const { currentUser, updateUser, friends } = this.props;
+
+    const allFriends = () =>
+      friends.map((friend) => (
+        <Link
+          to={`/users/${friend.id}`}
+          key={friend.id}
+          className="friends-link"
+        >
+          <div className="friends-list-item friends-page">
+            {friend.profilePic ? (
+              <img
+                src={friend.profilePic}
+                alt="profile-pic"
+                className="friends-profile-icon"
+              />
+            ) : (
+              <img
+                src={defaultPic}
+                alt="profile-pic"
+                className="friends-profile-icon"
+              />
+            )}
+            <span>
+              {capitalize(friend.fname) + " " + capitalize(friend.lname)}
+            </span>
+          </div>
+        </Link>
+      ));
 
     return (
       <div>
         <NavBarContainer />
         <ProfileHeader currentUser={currentUser} updateUser={updateUser} />
-        <div className="friends-page-container">
-          <h3>Friends</h3>
-          <div></div>
+        <div className="center">
+          <div className="friends-page-container">
+            <h3>Friends</h3>
+            <div className="friends-page-grid-container">
+              <div className="friends-page-grid">{allFriends()}</div>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -31,7 +64,7 @@ class FriendsPage extends React.Component {
 const mSTP = ({ entities: { users }, session }, ownProps) => ({
   user: users[ownProps.match.params.userId],
   currentUser: users[session.id],
-  users: allUsers(Object.values(users), users[session.id].friends, session.id),
+  friends: users[ownProps.match.params.userId].friends,
 });
 
 const mDTP = (dispatch) => ({

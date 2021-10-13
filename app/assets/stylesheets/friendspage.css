@@ -1,0 +1,38 @@
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.friends-page-container {
+  background: white;
+  width: max-content;
+  padding: 16px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.friends-page-container h3 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.friends-page-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 5px;
+  grid-column-gap: 5px;
+}
+
+.friends-list-item.friends-page {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+}

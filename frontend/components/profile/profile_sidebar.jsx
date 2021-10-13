@@ -108,11 +108,9 @@ class ProfileSideBar extends React.Component {
   }
 }
 
-const mSTP = ({ entities: { users } }, ownProps) => {
-  return {
-    friends: users[ownProps.match.params.userId]?.friends,
-    user: users[ownProps.match.params.userId],
-  };
-};
+const mSTP = ({ entities: { users } }, ownProps) => ({
+  friends: users[ownProps.match.params.userId]?.friends,
+  user: users[ownProps.match.params.userId],
+});
 
 export default withRouter(connect(mSTP)(ProfileSideBar));
