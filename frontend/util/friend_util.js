@@ -3,6 +3,8 @@ export const createFriendship = (friendship) => {
     url: "/api/friends",
     method: "POST",
     data: friendship,
+    processData: false,
+    contentType: false,
   });
 };
 

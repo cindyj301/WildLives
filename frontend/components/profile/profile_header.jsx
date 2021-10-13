@@ -102,11 +102,19 @@ class ProfileHeader extends React.Component {
         friendship.requesteeId === user.id
     );
 
-    deleteFriendship(parseInt(friendship[0].id));
+    deleteFriendship(parseInt(friendship[0].id)).then(
+      this.props.fetchUser(this.props.user.id)
+    );
   }
 
   addFriend() {
-    console.log("add friend");
+    const formData = new FormData();
+    formData.append("friend[requester_id]", this.props.currentUser.id);
+    formData.append("friend[requestee_id]", this.props.user.id);
+
+    this.props
+      .createFriendship(formData)
+      .then(this.props.fetchUser(this.props.user.id));
   }
 
   render() {
