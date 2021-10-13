@@ -5,6 +5,7 @@ import ProfileHeader from "./profile_header";
 import NavBarContainer from "../navbar/navbar_container";
 
 import { fetchUsers, updateUser } from "../../actions/user_actions";
+import { allUsers } from "../../util/format_util";
 
 class FriendsPage extends React.Component {
   componentDidMount() {
@@ -18,19 +19,20 @@ class FriendsPage extends React.Component {
       <div>
         <NavBarContainer />
         <ProfileHeader currentUser={currentUser} updateUser={updateUser} />
-        <div>friends</div>
+        <div className="friends-page-container">
+          <h3>Friends</h3>
+          <div></div>
+        </div>
       </div>
     );
   }
 }
 
-const mSTP = (state, ownProps) => {
-  return {
-    user: state.entities.users[ownProps.match.params.userId],
-    currentUser: state.entities.users[state.session.id],
-    users: Object.values(state.entities.users),
-  };
-};
+const mSTP = ({ entities: { users }, session }, ownProps) => ({
+  user: users[ownProps.match.params.userId],
+  currentUser: users[session.id],
+  users: allUsers(Object.values(users), users[session.id].friends, session.id),
+});
 
 const mDTP = (dispatch) => ({
   fetchUsers: () => dispatch(fetchUsers()),

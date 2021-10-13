@@ -90,15 +90,15 @@ class ProfileSideBar extends React.Component {
               <Link to={`/users/${user.id}/friends`} className="friends-link">
                 <h3>Friends</h3>
               </Link>
-              <Link to={`/users/${user.id}/friends`} className="friends-link">
-                <p>See All Friends</p>
-              </Link>
+              {friends.length === 1 ? (
+                <span className="friend-count">{friends.length} Friend</span>
+              ) : (
+                <span className="friend-count">{friends.length} Friends</span>
+              )}
             </div>
-            {friends.length === 1 ? (
-              <span className="friend-count">{friends.length} Friend</span>
-            ) : (
-              <span className="friend-count">{friends.length} Friends</span>
-            )}
+            <Link to={`/users/${user.id}/friends`} className="friends-link">
+              <p>See All Friends</p>
+            </Link>
           </div>
 
           <div className="friends-list-grid">{allFriends()}</div>

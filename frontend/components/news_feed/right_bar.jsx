@@ -64,15 +64,9 @@ class RightBar extends React.Component {
   }
 }
 
-const mSTP = ({ entities: { users }, session }) => {
-  return {
-    users: allUsers(
-      Object.values(users),
-      users[session.id].friends,
-      session.id
-    ),
-  };
-};
+const mSTP = ({ entities: { users }, session }) => ({
+  users: allUsers(Object.values(users), users[session.id].friends, session.id),
+});
 
 const mDTP = (dispatch) => ({
   fetchUsers: () => dispatch(fetchUsers()),
