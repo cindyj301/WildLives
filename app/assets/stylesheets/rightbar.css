@@ -1,40 +1,50 @@
 .right-bar-container h3 {
-    color: #65676B;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 10px;
-    margin-top: 10px;
+  color: #65676b;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 .right-bar-list-item {
-    /* background: lightcoral; */
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-radius: 7px;
-    margin-bottom: 5px;
-    padding: 7px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 7px;
+  margin-bottom: 5px;
+  padding: 7px;
 }
 
 .right-bar-list-item:hover {
-    background-color: rgba(194, 194, 194, 0.4);
-    transition: 0.5s;
-    cursor: pointer;
+  background-color: rgba(194, 194, 194, 0.4);
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .right-bar-list img {
-    width: 80px;
-    height: 80px;
+  width: 80px;
+  height: 80px;
 }
 
 .right-bar-list-item.first img {
-    width: 70px;
-    height: 90px;
-    padding: 5px;
+  width: 70px;
+  height: 90px;
+  padding: 5px;
 }
 
 .right-bar-list a {
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+
+/* user list */
+.user-list-header {
+  border-top: 0.5px solid rgba(170, 169, 169, 0.808);
+  padding-top: 15px !important;
+}
+
+.user-list {
+  overflow: scroll;
+  max-height: 400px;
 }

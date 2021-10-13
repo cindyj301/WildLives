@@ -24,6 +24,14 @@ export const allComments = ({ comments }) =>
 export const isFriend = (friends = [], currentUser) =>
   friends.some((friend) => friend.id == currentUser.id);
 
+export const allUsers = (users, friends, currentUserId) => {
+  return users.filter(
+    (user) =>
+      !friends.map((friend) => friend.id).includes(user.id) &&
+      user.id !== currentUserId
+  );
+};
+
 export const formatDate = (createdAt) => {
   const dateOptions = { month: "long", day: "numeric" };
   const dateYearOptions = { month: "long", day: "numeric", year: "numeric" };
