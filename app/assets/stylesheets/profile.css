@@ -148,6 +148,8 @@
 
 .profile-pic-upload-label {
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .profile-pic-upload-icon {
@@ -321,13 +323,11 @@
   padding: 15px;
   height: max-content;
   width: 365px;
-  /* width: max-content; */
 }
 
 .friends-header {
   display: flex;
   flex-direction: column;
-  gap: 5px;
 }
 
 .friends-subheader {
@@ -341,9 +341,22 @@
   font-weight: 700;
 }
 
+.friends-header h3:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .friends-header p {
   font-size: 16px;
   color: rgb(128, 86, 56);
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.friends-header p:hover {
+  background-color: rgba(0, 0, 0, 0.07);
+  transition: 0.5s;
+  cursor: pointer;
 }
 
 .friends-header span {
@@ -358,7 +371,6 @@
 
 .friends-list-grid {
   margin-top: 15px;
-  /* background-color: red; */
   display: grid;
   grid-template-columns: 100px 100px 100px;
   grid-template-rows: auto;
@@ -369,7 +381,6 @@
 }
 
 .friends-list-item {
-  /* background-color: lavenderblush; */
   display: flex;
   flex-direction: column;
   justify-content: center;

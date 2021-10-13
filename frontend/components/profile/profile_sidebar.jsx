@@ -87,8 +87,8 @@ class ProfileSideBar extends React.Component {
         <div className="friends">
           <div className="friends-header">
             <div className="friends-subheader">
-              <h3>Friends</h3>
-              <p>See All Friends</p>
+              <h3 onClick={this.props.toggleFriendsPage}>Friends</h3>
+              <p onClick={this.props.toggleFriendsPage}>See All Friends</p>
             </div>
             {friends.length === 1 ? (
               <span className="friend-count">{friends.length} Friend</span>

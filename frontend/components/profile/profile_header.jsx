@@ -227,8 +227,16 @@ class ProfileHeader extends React.Component {
         <div className="profile-page-nav-container">
           <ul className="profile-page-nav">
             <div className="profile-page-nav-tab-items-container">
-              <li className="profile-page-nav-tab-items">Posts</li>
-              <li className="profile-page-nav-tab-items">
+              <li
+                className="profile-page-nav-tab-items"
+                onClick={this.props.toggleFriendsPage}
+              >
+                Posts
+              </li>
+              <li
+                className="profile-page-nav-tab-items"
+                onClick={this.props.toggleFriendsPage}
+              >
                 Friends <span>{friends.length}</span>
               </li>
             </div>

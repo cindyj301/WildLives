@@ -64,13 +64,23 @@ const Navigation = ({ currentUser }) => {
     );
   };
 
+  const handleClick = () => {
+    console.log("in handle click");
+  };
+
   return (
     <ul className="navigation-container">
       <div className="left-nav-item-container">
         <Link to={`users/${currentUser.id}`} className="profile-link">
           <NavigationItem icon={profileIcon()} />
         </Link>
-        <NavigationItem icon={friendsIcon()} />
+        <Link
+          to={`users/${currentUser.id}`}
+          className="profile-link"
+          onClick={() => handleClick()}
+        >
+          <NavigationItem icon={friendsIcon()} />
+        </Link>
       </div>
       <div className="left-nav-item-container personal">
         <h3>About Me</h3>
