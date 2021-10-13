@@ -3,6 +3,11 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 
 import { capitalize, isFriend } from "../../util/format_util";
+import {
+  createFriendship,
+  deleteFriendship,
+} from "../../actions/friend_actions";
+import { fetchUser } from "../../actions/user_actions";
 
 class ProfileHeader extends React.Component {
   constructor(props) {
@@ -20,6 +25,16 @@ class ProfileHeader extends React.Component {
     this.handleFile = this.handleFile.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
     this.profilePicPreview = this.profilePicPreview.bind(this);
+    this.removeFriend = this.removeFriend.bind(this);
+    this.addFriend = this.addFriend.bind(this);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.friends) {
+      if (prevProps.friends.length !== this.props.friends.length) {
+        this.props.fetchUser(this.props.user.id);
+      }
+    }
   }
 
   toggleModal() {
@@ -78,10 +93,27 @@ class ProfileHeader extends React.Component {
       : "https://scontent.fhou1-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-5&_nc_sid=7206a8&_nc_ohc=3YCurt1IZskAX_WRAzK&_nc_ht=scontent.fhou1-1.fna&oh=a54fc5a653174e187629be9f492266f1&oe=616682F8";
   }
 
+  removeFriend(friendIds) {
+    const { deleteFriendship, currentUser, user } = this.props;
+
+    const friendship = friendIds.filter(
+      (friendship) =>
+        friendship.requesterId === currentUser.id &&
+        friendship.requesteeId === user.id
+    );
+
+    deleteFriendship(parseInt(friendship[0].id));
+  }
+
+  addFriend() {
+    console.log("add friend");
+  }
+
   render() {
-    const { user, currentUser, isFriend, friends } = this.props;
+    const { user, currentUser, isFriend, friends, friendIds } = this.props;
 
     if (!user) return null;
+    if (!friendIds) return null;
 
     const coverPhotoPreview = this.state.coverPhotoUrl ? (
       <img src={this.state.coverPhotoUrl} className="cover-photo-img" />
@@ -193,11 +225,14 @@ class ProfileHeader extends React.Component {
               </li>
             </div>
             {user.id === currentUser.id ? null : isFriend ? (
-              <div className="add-friend-container">
+              <div
+                className="add-friend-container"
+                onClick={() => this.removeFriend(friendIds)}
+              >
                 <span className="add-friend-text">Remove Friend</span>
               </div>
             ) : (
-              <div className="add-friend-container">
+              <div className="add-friend-container" onClick={this.addFriend}>
                 <img
                   className="add-friend-icon"
                   src={addFriend}
@@ -221,7 +256,14 @@ const mSTP = ({ entities: { users } }, ownProps) => {
       users[ownProps.match.params.userId]?.friends,
       ownProps.currentUser
     ),
+    friendIds: ownProps.currentUser.friendIds,
   };
 };
 
-export default withRouter(connect(mSTP)(ProfileHeader));
+const mDTP = (dispatch) => ({
+  createFriendship: (friendship) => dispatch(createFriendship(friendship)),
+  deleteFriendship: (friendshipId) => dispatch(deleteFriendship(friendshipId)),
+  fetchUser: (userId) => dispatch(fetchUser(userId)),
+});
+
+export default withRouter(connect(mSTP, mDTP)(ProfileHeader));

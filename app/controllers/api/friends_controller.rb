@@ -6,7 +6,8 @@ class Api::FriendsController < ApplicationController
 
     def create
         @friend = Friend.new(friend_params)
-        # @friend2 = Friend.new(requester_id: params[:friend][:requestee_id], requestee_id: params[:friend][:requester_id])
+        @user = current_user
+
         if @friend && @friend.save
             render 'api/users/show'
         else
@@ -15,13 +16,13 @@ class Api::FriendsController < ApplicationController
     end
     
     def destroy
-        @friend = Friend.find_by(requester_id: params[:requester_id], requestee_id: params[:requestee_id])
-        # @friend2 = Friend.find_by(requester_id: params[:requestee_id], requestee_id: params[:requester_id])
-        
+        @friend = Friend.find_by(id: params[:id])
+        @user = current_user
+
         if @friend && @friend.destroy
-            render {}
+            render 'api/users/show'
         else
-            render json: @friend.errors.full_messages, status: 422
+            render json: ["Unsuccessful deletion"]
         end
     end
 

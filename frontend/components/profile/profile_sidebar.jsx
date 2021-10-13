@@ -90,7 +90,7 @@ class ProfileSideBar extends React.Component {
               <h3>Friends</h3>
               <p>See All Friends</p>
             </div>
-            {friends.length <= 1 ? (
+            {friends.length === 1 ? (
               <span className="friend-count">{friends.length} Friend</span>
             ) : (
               <span className="friend-count">{friends.length} Friends</span>
