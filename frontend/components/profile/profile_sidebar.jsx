@@ -86,9 +86,15 @@ class ProfileSideBar extends React.Component {
         </div>
         <div className="friends">
           <div className="friends-header">
-            <h3>Friends</h3>
-            <p>See All Friends</p>
-            <span className="friend-count">{friends.length} Friends</span>
+            <div className="friends-subheader">
+              <h3>Friends</h3>
+              <p>See All Friends</p>
+            </div>
+            {friends.length <= 1 ? (
+              <span className="friend-count">{friends.length} Friend</span>
+            ) : (
+              <span className="friend-count">{friends.length} Friends</span>
+            )}
           </div>
 
           <div className="friends-list-grid">{allFriends()}</div>

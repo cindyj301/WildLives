@@ -189,7 +189,7 @@ class ProfileHeader extends React.Component {
             <div className="profile-page-nav-tab-items-container">
               <li className="profile-page-nav-tab-items">Posts</li>
               <li className="profile-page-nav-tab-items">
-                Friends {friends.length}
+                Friends <span>{friends.length}</span>
               </li>
             </div>
             {user.id === currentUser.id ? null : isFriend ? (
