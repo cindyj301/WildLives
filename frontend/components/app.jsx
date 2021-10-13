@@ -12,8 +12,12 @@ const App = () => (
   <div>
     <Switch>
       <ProtectedRoute path="/feed" component={NewsFeedContainer} />
-      <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
-      {/* <ProtectedRoute path="/users/:userId/friends" component={FriendsPage} /> */}
+      <ProtectedRoute
+        exact
+        path="/users/:userId"
+        component={ProfileContainer}
+      />
+      <ProtectedRoute path="/users/:userId/friends" component={FriendsPage} />
       <AuthRoute exact path="/" component={LoginFormContainer} />
     </Switch>
   </div>

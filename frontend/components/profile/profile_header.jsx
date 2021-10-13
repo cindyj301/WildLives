@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 
 import { capitalize, isFriend } from "../../util/format_util";
 import {
@@ -227,18 +228,14 @@ class ProfileHeader extends React.Component {
         <div className="profile-page-nav-container">
           <ul className="profile-page-nav">
             <div className="profile-page-nav-tab-items-container">
-              <li
-                className="profile-page-nav-tab-items"
-                onClick={this.props.toggleFriendsPage}
-              >
-                Posts
-              </li>
-              <li
-                className="profile-page-nav-tab-items"
-                onClick={this.props.toggleFriendsPage}
-              >
-                Friends <span>{friends.length}</span>
-              </li>
+              <Link to={`/users/${user.id}`} className="profile-link">
+                <li className="profile-page-nav-tab-items">Posts</li>
+              </Link>
+              <Link to={`/users/${user.id}/friends`} className="profile-link">
+                <li className="profile-page-nav-tab-items">
+                  Friends <span>{friends.length}</span>
+                </li>
+              </Link>
             </div>
             {user.id === currentUser.id ? null : isFriend ? (
               <div
