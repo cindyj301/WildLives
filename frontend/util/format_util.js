@@ -1,10 +1,16 @@
 export const capitalize = (name) =>
   name.slice(0, 1).toUpperCase() + name.slice(1).toLowerCase();
 
-export const allPosts = ({ posts }) =>
-  Object.keys(posts)
+export const allPosts = ({ posts }, user) => {
+  return Object.keys(posts)
     .map((id) => posts[id])
-    .reverse();
+    .reverse()
+    .filter(
+      (posts) =>
+        user.friends.map((friend) => friend.id).includes(posts.postAuthorId) ||
+        posts.postAuthorId === user.id
+    );
+};
 
 export const userPosts = ({ posts }, user) =>
   Object.keys(posts)
@@ -14,6 +20,9 @@ export const userPosts = ({ posts }, user) =>
 
 export const allComments = ({ comments }) =>
   Object.keys(comments).map((id) => comments[id]);
+
+export const isFriend = (friends = [], currentUser) =>
+  friends.some((friend) => friend.id == currentUser.id);
 
 export const formatDate = (createdAt) => {
   const dateOptions = { month: "long", day: "numeric" };

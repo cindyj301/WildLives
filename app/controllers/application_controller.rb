@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     end
 
     def ensure_logged_in!
-        render json: ['You must be logged in'], status: 401 unless logged_in? # note: change to more semantic error message?
+        render json: ['You must be logged in'], status: 401 unless logged_in?
     end
 
     def login!(user)

@@ -88,7 +88,7 @@ class ProfileSideBar extends React.Component {
           <div className="friends-header">
             <h3>Friends</h3>
             <p>See All Friends</p>
-            <span>{this.props.friends.length} Friends</span>
+            <span className="friend-count">{friends.length} Friends</span>
           </div>
 
           <div className="friends-list-grid">{allFriends()}</div>
@@ -100,7 +100,7 @@ class ProfileSideBar extends React.Component {
 
 const mSTP = ({ entities: { users } }, ownProps) => {
   return {
-    friends: users[ownProps.match.params.userId].friends,
+    friends: users[ownProps.match.params.userId]?.friends,
     user: users[ownProps.match.params.userId],
   };
 };

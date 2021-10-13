@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 
-import { capitalize } from "../../util/format_util";
+import { capitalize, isFriend } from "../../util/format_util";
 
 class ProfileHeader extends React.Component {
   constructor(props) {
@@ -79,7 +79,7 @@ class ProfileHeader extends React.Component {
   }
 
   render() {
-    const { user } = this.props;
+    const { user, currentUser, isFriend, friends } = this.props;
 
     if (!user) return null;
 
@@ -188,18 +188,24 @@ class ProfileHeader extends React.Component {
           <ul className="profile-page-nav">
             <div className="profile-page-nav-tab-items-container">
               <li className="profile-page-nav-tab-items">Posts</li>
-              <li className="profile-page-nav-tab-items">Friends</li>
-              {/* add number of friends */}
+              <li className="profile-page-nav-tab-items">
+                Friends {friends.length}
+              </li>
             </div>
-            <div className="add-friend-container">
-              <img
-                className="add-friend-icon"
-                src={addFriend}
-                alt="Credit: Add Friend by FBianchi from the Noun Project"
-              />
-              <span className="add-friend-text">Add Friend</span>
-              {/* <span className="add-friend-text">Remove Friend</span> */}
-            </div>
+            {user.id === currentUser.id ? null : isFriend ? (
+              <div className="add-friend-container">
+                <span className="add-friend-text">Remove Friend</span>
+              </div>
+            ) : (
+              <div className="add-friend-container">
+                <img
+                  className="add-friend-icon"
+                  src={addFriend}
+                  alt="Credit: Add Friend by FBianchi from the Noun Project"
+                />
+                <span className="add-friend-text">Add Friend</span>
+              </div>
+            )}
           </ul>
         </div>
       </div>
@@ -207,8 +213,15 @@ class ProfileHeader extends React.Component {
   }
 }
 
-const mSTP = ({ entities: { users } }, ownProps) => ({
-  user: users[ownProps.match.params.userId],
-});
+const mSTP = ({ entities: { users } }, ownProps) => {
+  return {
+    user: users[ownProps.match.params.userId],
+    friends: users[ownProps.match.params.userId]?.friends,
+    isFriend: isFriend(
+      users[ownProps.match.params.userId]?.friends,
+      ownProps.currentUser
+    ),
+  };
+};
 
 export default withRouter(connect(mSTP)(ProfileHeader));
