@@ -64,6 +64,15 @@ const Navigation = ({ currentUser }) => {
     );
   };
 
+  const portfolioIcon = () => {
+    return (
+      <div className="personal-icon">
+        <img src={portfolio} alt="portfolio site" />
+        <span>Portfolio Site</span>
+      </div>
+    );
+  };
+
   return (
     <ul className="navigation-container">
       <div className="left-nav-item-container">
@@ -79,17 +88,34 @@ const Navigation = ({ currentUser }) => {
         <a
           className="personal-links"
           href="https://github.com/cindyj301/WildLives"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <NavigationItem icon={gitHubIcon()} />
         </a>
         <a
           className="personal-links"
           href="https://www.linkedin.com/in/jiang-cindy/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           <NavigationItem icon={linkedInIcon()} />
         </a>
-        <a className="personal-links" href="https://angel.co/u/cindy-jiang-4">
+        <a
+          className="personal-links"
+          href="https://angel.co/u/cindy-jiang-4"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <NavigationItem icon={angellistIcon()} />
+        </a>
+        <a
+          className="personal-links"
+          href="https://cindyj301.github.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <NavigationItem icon={portfolioIcon()} />
         </a>
         <div className="tech-description">
           <span>Ruby on Rails</span>
