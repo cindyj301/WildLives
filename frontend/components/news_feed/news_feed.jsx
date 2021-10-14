@@ -13,58 +13,66 @@ import LoginFormContainer from "../login/login_form_container";
 // util imports
 import { capitalize } from "../../util/format_util";
 
-const NewsFeed = ({ currentUser, showModal }) => {
-  if (!currentUser) return null;
+class NewsFeed extends React.Component {
+  componentDidMount() {
+    this.props.fetchUsers();
+  }
 
-  const createPostButton = () => {
-    return (
-      <div className="post-form-button-container">
-        <div className="post-form-button">
-          <li className="profile-container">
-            {currentUser.profilePic ? (
-              <img
-                src={currentUser.profilePic}
-                alt="profile-icon"
-                className="profile-icon"
-              />
-            ) : (
-              <img
-                className="profile-icon"
-                src={defaultPic}
-                alt="profile-icon"
-              />
-            )}
-          </li>
-          <p onClick={() => showModal()}>
-            What's on your mind, {capitalize(currentUser.fname)}?
-          </p>
+  render() {
+    const { currentUser, showModal } = this.props;
+
+    if (!currentUser) return null;
+
+    const createPostButton = () => {
+      return (
+        <div className="post-form-button-container">
+          <div className="post-form-button">
+            <li className="profile-container">
+              {currentUser.profilePic ? (
+                <img
+                  src={currentUser.profilePic}
+                  alt="profile-icon"
+                  className="profile-icon"
+                />
+              ) : (
+                <img
+                  className="profile-icon"
+                  src={defaultPic}
+                  alt="profile-icon"
+                />
+              )}
+            </li>
+            <p onClick={() => showModal()}>
+              What's on your mind, {capitalize(currentUser.fname)}?
+            </p>
+          </div>
+        </div>
+      );
+    };
+
+    const loggedIn = () => (
+      <div>
+        <NavBarContainer />
+        <div className="news-feed-container">
+          <NavigationContainer />
+          <div className="news-feed-post-container">
+            <Modal />
+            {createPostButton()}
+            <PostIndexContainer />
+          </div>
+          <RightBar />
         </div>
       </div>
     );
-  };
 
-  const loggedIn = () => (
-    <div>
-      <NavBarContainer />
-      <div className="news-feed-container">
-        <NavigationContainer />
-        <div className="news-feed-post-container">
-          <Modal />
-          {createPostButton()}
-          <PostIndexContainer />
-        </div>
-        <RightBar />
+    const loggedOut = () => (
+      <div>
+        <LoginFormContainer />
       </div>
-    </div>
-  );
+    );
 
-  const loggedOut = () => (
-    <div>
-      <LoginFormContainer />
-    </div>
-  );
-
-  return currentUser ? loggedIn() : loggedOut();
-};
+    return currentUser ? loggedIn() : loggedOut();
+  }
+}
 
 export default NewsFeed;
