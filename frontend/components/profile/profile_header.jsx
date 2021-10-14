@@ -205,12 +205,6 @@ class ProfileHeader extends React.Component {
               />
             </div>
           )}
-          {/* <div className="profile-pic-wrapper"> */}
-          {/* <img
-              src={this.profilePicPreview()}
-              className="profile-page-pic"
-              alt="profile-pic"
-            /> */}
           {user.profilePic ? (
             <img
               src={user.profilePic}
@@ -224,7 +218,6 @@ class ProfileHeader extends React.Component {
               alt="profile-pic"
             />
           )}
-          {/* </div> */}
         </div>
         <div className="profile-info-container">
           <span>{capitalize(user.fname) + " " + capitalize(user.lname)}</span>
