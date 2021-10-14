@@ -6,7 +6,6 @@ import { fetchUsers } from "../../actions/user_actions";
 
 const mSTP = ({ session, entities: { users } }) => ({
   currentUser: users[session.id],
-  users: users,
 });
 
 const mDTP = (dispatch) => ({

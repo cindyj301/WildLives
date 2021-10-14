@@ -157,50 +157,54 @@ class ProfileHeader extends React.Component {
         {coverPhotoModal}
         <div className="profile-pics-container">
           <div className="cover-photo-container">
-            <div className="cover-photo-upload-container">
-              {coverPhotoPreview}
-              {user.coverPhoto ? (
-                <img src={user.coverPhoto} alt="cover-photo" />
-              ) : (
-                <div className="cover-photo"></div>
-              )}
-              <div className="cover-photo-upload-label-container">
-                <label
-                  className="cover-photo-upload-label"
-                  htmlFor="cover-photo-input"
-                >
-                  <img
-                    className="cover-photo-upload-icon"
-                    src={camera}
-                    alt="add-cover-photo"
+            {currentUser.id !== user.id ? null : (
+              <div className="cover-photo-upload-container">
+                {coverPhotoPreview}
+                {user.coverPhoto ? (
+                  <img src={user.coverPhoto} alt="cover-photo" />
+                ) : (
+                  <div className="cover-photo"></div>
+                )}
+                <div className="cover-photo-upload-label-container">
+                  <label
+                    className="cover-photo-upload-label"
+                    htmlFor="cover-photo-input"
+                  >
+                    <img
+                      className="cover-photo-upload-icon"
+                      src={camera}
+                      alt="add-cover-photo"
+                    />
+                    <span>Add Cover Photo</span>
+                  </label>
+                  <input
+                    type="file"
+                    id="cover-photo-input"
+                    onChange={this.handleFile("coverPhoto")}
                   />
-                  <span>Add Cover Photo</span>
-                </label>
-                <input
-                  type="file"
-                  id="cover-photo-input"
-                  onChange={this.handleFile("coverPhoto")}
-                />
+                </div>
               </div>
-            </div>
+            )}
           </div>
-          <div className="profile-pic-upload-container">
-            <label
-              className="profile-pic-upload-label"
-              htmlFor="profile-pic-input"
-            >
-              <img
-                className="profile-pic-upload-icon"
-                src={camera}
-                alt="profile-pic"
+          {currentUser.id !== user.id ? null : (
+            <div className="profile-pic-upload-container">
+              <label
+                className="profile-pic-upload-label"
+                htmlFor="profile-pic-input"
+              >
+                <img
+                  className="profile-pic-upload-icon"
+                  src={camera}
+                  alt="profile-pic"
+                />
+              </label>
+              <input
+                type="file"
+                id="profile-pic-input"
+                onChange={this.handleFile("profilePic")}
               />
-            </label>
-            <input
-              type="file"
-              id="profile-pic-input"
-              onChange={this.handleFile("profilePic")}
-            />
-          </div>
+            </div>
+          )}
           <div className="profile-pic-wrapper">
             <img
               src={this.profilePicPreview()}
