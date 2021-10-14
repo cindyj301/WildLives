@@ -13,9 +13,9 @@
 }
 
 .profile-pics-container {
-  display: flex;
   justify-content: center;
-  height: 350px;
+  display: grid;
+  height: 500px;
 }
 
 /* cover photo */
@@ -29,6 +29,7 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0px 15px 10px -15px rgba(212, 214, 216, 0.801);
+  height: 500px;
 }
 
 .cover-photo-upload-label-container {
@@ -161,12 +162,13 @@
   display: none;
 }
 
-.profile-pic-wrapper {
+/* .profile-pic-wrapper {
   display: flex;
   justify-content: center;
   height: 100%;
   align-items: flex-end;
-}
+  position: absolute;
+} */
 
 .profile-page-pic {
   border-radius: 50%;
