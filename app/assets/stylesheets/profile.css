@@ -15,7 +15,7 @@
 .profile-pics-container {
   display: grid;
   height: 350px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 50px 1fr 1fr;
   grid-template-rows: 1fr 1fr 90px 90px 50px 30px 1fr;
 }
 
@@ -33,9 +33,9 @@
 }
 
 .cover-photo-upload-label-container {
-  right: 30px;
+  /* right: 30px;
   bottom: 15px;
-  position: absolute;
+  position: absolute; */
 }
 
 .cover-photo-upload-label {
@@ -130,7 +130,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-self: end;
+  grid-column: 4/4;
 }
 
 .profile-pic-upload-container:hover {
@@ -172,7 +172,7 @@
   justify-content: center;
   align-items: center;
   gap: 3px;
-  margin-top: -10px;
+  margin-top: -20px;
 }
 
 .profile-info-container span {
