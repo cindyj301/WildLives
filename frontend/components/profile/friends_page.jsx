@@ -53,14 +53,16 @@ class FriendsPage extends React.Component {
       <div>
         <NavBarContainer />
         <ProfileHeader currentUser={currentUser} updateUser={updateUser} />
-        <div className="center">
-          <div className="friends-page-container">
-            <h3>Friends</h3>
-            <div className="friends-page-grid-container">
-              <div className="friends-page-grid">{allFriends()}</div>
+        {friends.length === 0 ? null : (
+          <div className="center">
+            <div className="friends-page-container">
+              <h3>Friends</h3>
+              <div className="friends-page-grid-container">
+                <div className="friends-page-grid">{allFriends()}</div>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     );
   }
