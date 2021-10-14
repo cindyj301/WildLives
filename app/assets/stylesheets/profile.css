@@ -394,5 +394,5 @@
 /* profile posts */
 .news-feed-post-container.profile {
   min-width: 500px;
-  overflow: auto;
+  overflow-y: scroll;
 }
