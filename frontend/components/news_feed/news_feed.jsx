@@ -14,6 +14,8 @@ import LoginFormContainer from "../login/login_form_container";
 import { capitalize } from "../../util/format_util";
 
 const NewsFeed = ({ currentUser, showModal }) => {
+  if (!currentUser) return null;
+
   const createPostButton = () => {
     return (
       <div className="post-form-button-container">
