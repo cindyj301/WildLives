@@ -55,42 +55,44 @@ class LoginForm extends React.Component {
     );
 
     return (
-      <div className="splash-container">
-        {splashText()}
-        <div className="form-container">
-          <form className="login-form" onSubmit={this.handleSubmit}>
-            <ul className="login-errors-container">{this.renderErrors()}</ul>
-            <input
-              className="form-input"
-              type="email"
-              placeholder="Email"
-              value={this.state.email}
-              onChange={this.handleChange("email")}
-            />
-            <input
-              className="form-input"
-              type="password"
-              placeholder="Password"
-              value={this.state.password}
-              onChange={this.handleChange("password")}
-            />
-            <button className="login-button">
-              <p>Log In</p>
-            </button>
-          </form>
-          <div className="form-button-container">
-            <div className="demo-user-button">
-              <p onClick={(e) => this.handleDemoUser(e)}>
-                Log in as Demo Sloth
-              </p>
+      <div>
+        <Modal />
+        <div className="splash-container">
+          {splashText()}
+          <div className="form-container">
+            <form className="login-form" onSubmit={this.handleSubmit}>
+              <ul className="login-errors-container">{this.renderErrors()}</ul>
+              <input
+                className="form-input"
+                type="email"
+                placeholder="Email"
+                value={this.state.email}
+                onChange={this.handleChange("email")}
+              />
+              <input
+                className="form-input"
+                type="password"
+                placeholder="Password"
+                value={this.state.password}
+                onChange={this.handleChange("password")}
+              />
+              <button className="login-button">
+                <p>Log In</p>
+              </button>
+            </form>
+            <div className="form-button-container">
+              <div className="demo-user-button">
+                <p onClick={(e) => this.handleDemoUser(e)}>
+                  Log in as Demo Sloth
+                </p>
+              </div>
+              <button
+                className="signup-button"
+                onClick={() => this.props.showModal()}
+              >
+                Create New Account
+              </button>
             </div>
-            <Modal />
-            <button
-              className="signup-button"
-              onClick={() => this.props.showModal()}
-            >
-              Create New Account
-            </button>
           </div>
         </div>
       </div>
