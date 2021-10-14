@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import NewsFeed from "./news_feed";
 import { showModal } from "../../actions/modal_actions";
-import { fetchUsers } from "../../actions/user_actions";
+import { fetchUser } from "../../actions/user_actions";
 
 const mSTP = ({ session, entities: { users } }) => ({
   currentUser: users[session.id],
@@ -10,7 +10,7 @@ const mSTP = ({ session, entities: { users } }) => ({
 
 const mDTP = (dispatch) => ({
   showModal: () => dispatch(showModal("create")),
-  fetchUsers: () => dispatch(fetchUsers()),
+  fetchUser: (userId) => dispatch(fetchUser(userId)),
 });
 
 export default connect(mSTP, mDTP)(NewsFeed);

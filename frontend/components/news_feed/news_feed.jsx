@@ -15,7 +15,7 @@ import { capitalize } from "../../util/format_util";
 
 class NewsFeed extends React.Component {
   componentDidMount() {
-    this.props.fetchUsers();
+    this.props.fetchUser(this.props.currentUser.id);
   }
 
   render() {

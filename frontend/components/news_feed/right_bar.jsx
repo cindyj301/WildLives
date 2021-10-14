@@ -18,7 +18,7 @@ class RightBar extends React.Component {
             {user.profilePic ? (
               <img
                 className="profile-icon left-nav"
-                src={currentUser.profilePic}
+                src={user.profilePic}
                 alt="profile-icon"
               />
             ) : (
