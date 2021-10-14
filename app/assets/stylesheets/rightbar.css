@@ -46,5 +46,6 @@
 
 .user-list {
   overflow-y: scroll;
+  overflow-x: hidden;
   max-height: 400px;
 }

@@ -395,4 +395,5 @@
 .news-feed-post-container.profile {
   min-width: 500px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
